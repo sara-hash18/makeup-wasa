@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fond de teint | Makeup WA&SA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:#faf7f5;
+    color:#321b20;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:linear-gradient(135deg,#4d1724,#7d3041,#c47b89);
+    color:white;
+    text-align:center;
+    padding:45px 20px 35px;
+}
+
+header h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:17px;
+    letter-spacing:1px;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,0.97);
+
+    box-shadow:0 3px 15px rgba(0,0,0,0.08);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    gap:30px;
+
+    padding:17px 15px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#4d1724;
+    font-weight:bold;
+    font-size:14px;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#b85c72;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    max-width:1200px;
+    margin:50px auto;
+    padding:0 20px;
+}
+
+/* ================= BACK ================= */
+
+.back{
+    display:inline-block;
+    margin-bottom:30px;
+
+    text-decoration:none;
+
+    color:#7d3041;
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.back:hover{
+    color:#c47b89;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.hero h2{
+    font-size:38px;
+    color:#4d1724;
+    margin-bottom:12px;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+
+    color:#766468;
+    line-height:1.7;
+    font-size:16px;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:white;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 8px 30px rgba(77,23,36,0.10);
+
+    transition:0.35s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:
+        0 16px 40px rgba(77,23,36,0.18);
+}
+
+/* ================= IMAGE ================= */
+
+.image-box{
+    height:400px;
+
+    background:#f8f3f1;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+
+    position:relative;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    transition:0.4s;
+}
+
+.card:hover .image-box img{
+    transform:scale(1.04);
+}
+
+/* ================= BADGE ================= */
+
+.badge{
+    position:absolute;
+
+    top:18px;
+    left:18px;
+
+    background:#7d3041;
+    color:white;
+
+    padding:7px 14px;
+
+    border-radius:20px;
+
+    font-size:11px;
+    font-weight:bold;
+
+    z-index:2;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.card-content{
+    padding:25px;
+}
+
+.brand{
+    color:#b85c72;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    margin-bottom:10px;
+}
+
+.card h3{
+    font-size:24px;
+
+    color:#321b20;
+
+    margin-bottom:12px;
+}
+
+.stars{
+    color:#c18a30;
+
+    font-size:17px;
+
+    margin-bottom:13px;
+}
+
+.description{
+    color:#766468;
+
+    font-size:14px;
+
+    line-height:1.7;
+
+    min-height:70px;
+
+    margin-bottom:15px;
+}
+
+.price{
+    color:#7d3041;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+}
+
+/* ================= BUTTON ================= */
+
+.discover{
+    display:block;
+
+    width:100%;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    background:linear-gradient(
+        135deg,
+        #4d1724,
+        #9a465b
+    );
+
+    color:white;
+
+    padding:15px 20px;
+
+    border-radius:30px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.discover:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(77,23,36,0.25);
+}
+
+/* ================= INFO ================= */
+
+.info{
+    margin-top:55px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.info-card{
+    background:white;
+
+    padding:25px 20px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.06);
+}
+
+.info-icon{
+    font-size:30px;
+
+    margin-bottom:10px;
+}
+
+.info-card h4{
+    font-size:17px;
+
+    margin-bottom:8px;
+}
+
+.info-card p{
+    color:#766468;
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:70px;
+
+    background:#321b20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px 15px;
+
+    font-size:14px;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:900px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    header{
+        padding:38px 15px 30px;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+
+    header p{
+        font-size:15px;
+    }
+
+    nav{
+        gap:12px;
+
+        flex-wrap:wrap;
+
+        padding:14px 8px;
+    }
+
+    nav a{
+        font-size:12px;
+    }
+
+    .container{
+        margin:35px auto;
+
+        padding:0 15px;
+    }
+
+    .hero h2{
+        font-size:29px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+
+        gap:25px;
+    }
+
+    .image-box{
+        height:370px;
+    }
+
+    .card-content{
+        padding:22px;
+    }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:380px){
+
+    .image-box{
+        height:320px;
+    }
+
+    header h1{
+        font-size:27px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <h1>💄 Makeup WA&SA</h1>
+
+    <p>
+        La beauté commence avec toi ✨
+    </p>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <a href="makeuo.html">
+        ACCUEIL
+    </a>
+
+    <a href="produits.html">
+        PRODUITS
+    </a>
+
+    <a href="rouge.html">
+        ROUGES À LÈVRES
+    </a>
+
+    <a href="palette.html">
+        PALETTES
+    </a>
+
+    <a href="panier.html">
+        🛍 PANIER (<span id="cartCount">0</span>)
+    </a>
+
+</nav>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<div class="container">
+
+
+    <a href="produits.html" class="back">
+        ← Retour aux produits
+    </a>
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
+    <section class="hero">
+
+        <h2>
+            Nos Fonds de Teint
+        </h2>
+
+        <p>
+            Découvrez notre sélection de fonds de teint
+            pour créer un teint uniforme, naturel et élégant.
+            Choisissez votre marque préférée pour découvrir
+            ses différentes teintes.
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         PRODUCTS
+    ================================================== -->
+
+    <section class="products">
+
+
+        <!-- =================================================
+             FENTY BEAUTY
+        ================================================== -->
+
+        <article class="card">
+
+            <div class="image-box">
+
+                <span class="badge">
+                    BEST SELLER
+                </span>
+
+                <img
+                    src="FENTYBEUTY.jpeg"
+                    alt="Fenty Beauty Fond de Teint"
+                >
+
+            </div>
+
+
+            <div class="card-content">
+
+                <div class="brand">
+                    Fenty Beauty
+                </div>
+
+                <h3>
+                    Pro Filt'r Foundation
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="description">
+                    Un fond de teint élégant avec une
+                    couvrance modulable et un fini naturel.
+                    Découvrez ses différentes teintes.
+                </p>
+
+                <div class="price">
+                    490 DH
+                </div>
+
+                <a
+                    href="fond-details.html?product=fenty"
+                    class="discover">
+
+                    Découvrir
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             CATRICE
+        ================================================== -->
+
+        <article class="card">
+
+            <div class="image-box">
+
+                <span class="badge">
+                    NOUVEAUTÉ
+                </span>
+
+                <img
+                    src="makeUP.jpeg"
+                    alt="Catrice HD Liquid Coverage Foundation"
+                >
+
+            </div>
+
+
+            <div class="card-content">
+
+                <div class="brand">
+                    Catrice
+                </div>
+
+                <h3>
+                    HD Liquid Coverage
+                </h3>
+
+                <div class="stars">
+                    ★★★★☆
+                </div>
+
+                <p class="description">
+                    Une formule légère pour obtenir
+                    un teint uniforme et naturel,
+                    avec plusieurs teintes disponibles.
+                </p>
+
+                <div class="price">
+                    159 DH
+                </div>
+
+                <a
+                    href="fond-details.html?product=catrice"
+                    class="discover">
+
+                    Découvrir
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- =================================================
+             MAYBELLINE
+        ================================================== -->
+
+        <article class="card">
+
+            <div class="image-box">
+
+                <span class="badge">
+                    POPULAIRE
+                </span>
+
+                <img
+                    src="maybelline30H.jpeg"
+                    alt="Maybelline Super Stay Foundation"
+                >
+
+            </div>
+
+
+            <div class="card-content">
+
+                <div class="brand">
+                    Maybelline New York
+                </div>
+
+                <h3>
+                    Super Stay Foundation
+                </h3>
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="description">
+                    Une tenue longue durée avec une
+                    couvrance confortable et uniforme.
+                    Choisissez votre teinte préférée.
+                </p>
+
+                <div class="price">
+                    189 DH
+                </div>
+
+                <a
+                    href="fond-details.html?product=maybelline"
+                    class="discover">
+
+                    Découvrir
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+    <!-- =================================================
+         INFORMATION
+    ================================================== -->
+
+    <section class="info">
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🎨
+            </div>
+
+            <h4>
+                Plusieurs teintes
+            </h4>
+
+            <p>
+                Chaque marque possède ses propres
+                teintes pour vous permettre de trouver
+                celle qui vous correspond.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                ✨
+            </div>
+
+            <h4>
+                Beauté premium
+            </h4>
+
+            <p>
+                Découvrez une sélection de produits
+                pour votre routine beauté.
+            </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <div class="info-icon">
+                🛍️
+            </div>
+
+            <h4>
+                Commande facile
+            </h4>
+
+            <p>
+                Choisissez votre fond de teint,
+                sélectionnez votre teinte et ajoutez
+                le produit au panier.
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+</div>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    © 2026 Makeup WA&SA — Tous droits réservés ✨
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+/* ================================
+   RÉCUPÉRER LE PANIER
+================================ */
+
+function getCart(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem("makeupCart")
+        ) || [];
+
+    }
+
+    catch(error){
+
+        return [];
+
+    }
+
+}
+
+
+/* ================================
+   COMPTEUR DU PANIER
+================================ */
+
+function updateCartCount(){
+
+    const cart = getCart();
+
+    let total = 0;
+
+
+    cart.forEach(function(item){
+
+        total += Number(
+            item.quantity || 0
+        );
+
+    });
+
+
+    document.getElementById(
+        "cartCount"
+    ).textContent = total;
+
+}
+
+
+/* ================================
+   INITIALISATION
+================================ */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        updateCartCount();
+
+    }
+);
+
+</script>
+
+
+</body>
+
+</html>

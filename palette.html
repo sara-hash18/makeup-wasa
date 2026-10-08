@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Palettes | Makeup WA&SA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:#faf7f5;
+    color:#321b20;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#4d1724,#7d3041,#c47b89);
+    color:white;
+    text-align:center;
+    padding:55px 20px 45px;
+}
+
+header h1{
+    font-size:46px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+header p{
+    font-size:18px;
+    font-style:italic;
+}
+
+/* NAV */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(255,255,255,0.97);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+
+    gap:28px;
+
+    padding:17px 15px;
+
+    box-shadow:0 3px 15px rgba(0,0,0,0.10);
+}
+
+nav a{
+    text-decoration:none;
+    color:#4d1724;
+    font-weight:bold;
+    font-size:14px;
+    letter-spacing:1px;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#c47b89;
+}
+
+/* INTRO */
+
+.intro{
+    text-align:center;
+    padding:60px 20px 35px;
+}
+
+.intro h2{
+    font-size:38px;
+    color:#5b1f2d;
+    margin-bottom:15px;
+}
+
+.intro p{
+    max-width:700px;
+    margin:auto;
+
+    color:#73555c;
+
+    font-size:17px;
+    line-height:1.8;
+}
+
+/* CATEGORIES */
+
+.categories{
+    width:90%;
+    max-width:1200px;
+
+    margin:30px auto 80px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+}
+
+/* CARD */
+
+.card{
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    text-decoration:none;
+
+    color:#321b20;
+
+    box-shadow:0 8px 25px rgba(70,20,30,0.12);
+
+    transition:0.4s;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(70,20,30,0.20);
+}
+
+/* IMAGE */
+
+.card-image{
+    width:100%;
+    height:330px;
+
+    background:#f5eeee;
+
+    overflow:hidden;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.5s;
+}
+
+.card:hover .card-image img{
+    transform:scale(1.06);
+}
+
+/* CONTENT */
+
+.card-content{
+    text-align:center;
+
+    padding:25px 20px 30px;
+}
+
+.card-content h3{
+    font-size:26px;
+
+    color:#5b1f2d;
+
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#7b5a61;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+}
+
+/* BUTTON */
+
+.btn{
+    display:inline-block;
+
+    background:linear-gradient(135deg,#5b1f2d,#a34d61);
+
+    color:white;
+
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.card:hover .btn{
+    background:linear-gradient(135deg,#a34d61,#5b1f2d);
+}
+
+/* MESSAGE */
+
+.beauty-message{
+    width:90%;
+    max-width:900px;
+
+    margin:0 auto 70px;
+
+    padding:40px 20px;
+
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #fff0f3,
+        #f9e2e7
+    );
+
+    border-radius:20px;
+}
+
+.beauty-message h2{
+    color:#5b1f2d;
+
+    font-size:28px;
+
+    margin-bottom:12px;
+}
+
+.beauty-message p{
+    color:#68454c;
+
+    line-height:1.7;
+}
+
+/* FOOTER */
+
+footer{
+    background:#321b20;
+
+    color:white;
+
+    text-align:center;
+
+    padding:28px 20px;
+}
+
+footer p{
+    font-size:14px;
+
+    margin:5px 0;
+}
+
+footer a{
+    color:#f1b8c4;
+
+    text-decoration:none;
+}
+
+/* TABLET */
+
+@media(max-width:900px){
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:34px;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    nav a{
+        font-size:11px;
+    }
+
+    .intro h2{
+        font-size:30px;
+    }
+
+    .categories{
+        width:92%;
+        grid-template-columns:1fr;
+    }
+
+    .card-image{
+        height:340px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <h1>💄 Makeup WA&SA</h1>
+
+    <p>La beauté commence avec toi ✨</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="makeuo.html">ACCUEIL</a>
+
+    <a href="produits.html">PRODUITS</a>
+
+    <a href="rouge.html">ROUGES À LÈVRES</a>
+
+    <a href="palette.html">PALETTES</a>
+
+    <a href="panier.html">
+        🛍 PANIER (<span id="cartCount">0</span>)
+    </a>
+
+</nav>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <h2>Nos Palettes</h2>
+
+    <p>
+        Découvrez nos différentes collections de palettes
+        et trouvez les teintes parfaites pour créer votre look.
+    </p>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+
+    <!-- PALETTE SHADES -->
+
+    <a
+        href="palette-details.html?category=shades"
+        class="card"
+    >
+
+        <div class="card-image">
+
+            <img
+                src="palettes shades.jpeg"
+                alt="Palette Shades"
+            >
+
+        </div>
+
+        <div class="card-content">
+
+            <h3>Palette Shades</h3>
+
+            <p>
+                Découvrez nos palettes aux différentes
+                nuances et couleurs.
+            </p>
+
+            <span class="btn">
+                Découvrir
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- ESSENCE PALETTE -->
+
+    <a
+        href="palette-details.html?category=essence"
+        class="card"
+    >
+
+        <div class="card-image">
+
+            <img
+                src="essencepalette.jpeg"
+                alt="Essence Palette"
+            >
+
+        </div>
+
+        <div class="card-content">
+
+            <h3>Essence Palette</h3>
+
+            <p>
+                Une collection de palettes Essence
+                pour tous vos looks beauté.
+            </p>
+
+            <span class="btn">
+                Découvrir
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- REVOLUTION PALETTE -->
+
+    <a
+        href="palette-details.html?category=revolution"
+        class="card"
+    >
+
+        <div class="card-image">
+
+            <img
+                src="revolutionpalette.jpeg"
+                alt="Revolution Palette"
+            >
+
+        </div>
+
+        <div class="card-content">
+
+            <h3>Revolution Palette</h3>
+
+            <p>
+                Explorez notre sélection de palettes
+                Revolution et leurs différentes teintes.
+            </p>
+
+            <span class="btn">
+                Découvrir
+            </span>
+
+        </div>
+
+    </a>
+
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<section class="beauty-message">
+
+    <h2>✨ La beauté commence avec toi</h2>
+
+    <p>
+        Choisissez votre collection et découvrez
+        les différentes couleurs disponibles.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Makeup WA&SA — Tous droits réservés ✨
+    </p>
+
+    <p>
+        Contact :
+        <a href="mailto:contact@makeupwasa.com">
+            contact@makeupwasa.com
+        </a>
+    </p>
+
+</footer>
+
+
+<!-- CART -->
+
+<script>
+
+function updateCartCount(){
+
+    let cart = [];
+
+    try{
+
+        cart =
+        JSON.parse(
+            localStorage.getItem("makeupCart")
+        ) || [];
+
+    }catch(error){
+
+        cart = [];
+
+    }
+
+    let total = 0;
+
+    cart.forEach(function(item){
+
+        total += Number(item.quantity) || 1;
+
+    });
+
+    document.getElementById("cartCount").textContent = total;
+
+}
+
+updateCartCount();
+
+</script>
+
+
+</body>
+
+</html>

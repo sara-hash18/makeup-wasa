@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Commande | Makeup WA&SA</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #fff7fa;
+            color: #333;
+        }
+
+        header {
+            background: #e8a8b8;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 30px;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .title {
+            text-align: center;
+            color: #b85c76;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        .checkout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .box h2 {
+            color: #b85c76;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #d8899f;
+        }
+
+        textarea {
+            height: 90px;
+            resize: vertical;
+        }
+
+        /* PAYMENT */
+
+        .payment-option {
+            border: 2px solid #eee;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .payment-option:hover {
+            border-color: #d8899f;
+        }
+
+        .payment-option.selected {
+            border-color: #b85c76;
+            background: #fff5f8;
+        }
+
+        .payment-option label {
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .payment-option input {
+            width: auto;
+            accent-color: #b85c76;
+        }
+
+        .payment-title {
+            font-size: 17px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .payment-description {
+            margin-top: 8px;
+            margin-left: 28px;
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .card-info {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 10px;
+            border: 1px solid #eee;
+        }
+
+        .card-info.show {
+            display: block;
+        }
+
+        .secure {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* PRODUCTS */
+
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .product-item img {
+            width: 75px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-info h3 {
+            color: #555;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .product-info p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .price {
+            color: #b85c76;
+            font-weight: bold;
+        }
+
+        .summary {
+            margin-top: 20px;
+        }
+
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin: 12px 0;
+        }
+
+        .total {
+            border-top: 2px solid #eee;
+            padding-top: 15px;
+            margin-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #b85c76;
+        }
+
+        .confirm-btn {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            background: #b85c76;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 17px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .confirm-btn:hover {
+            background: #963f5b;
+        }
+
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #b85c76;
+            text-decoration: none;
+        }
+
+        /* SUCCESS */
+
+        #success {
+            display: none;
+            background: white;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        #success h2 {
+            color: #b85c76;
+            margin-bottom: 15px;
+        }
+
+        #success p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .order-number {
+            font-size: 22px;
+            font-weight: bold;
+            color: #b85c76;
+            margin: 20px 0;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 13px 25px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 800px) {
+            .checkout {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 94%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Makeup WA&SA</h1>
+
+    <nav>
+        <a href="makeuo.html">Accueil</a>
+        <a href="produits.html">Produits</a>
+        <a href="panier.html">Mon Panier</a>
+    </nav>
+</header>
+
+
+<div class="container" id="checkoutPage">
+
+    <h1 class="title">Finaliser ma commande</h1>
+
+    <div class="checkout">
+
+        <!-- INFORMATIONS CLIENT -->
+
+        <div class="box">
+
+            <h2>Informations de livraison</h2>
+
+            <form id="orderForm">
+
+                <label for="name">Nom complet *</label>
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Votre nom complet"
+                    required
+                >
+
+                <label for="phone">Téléphone *</label>
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="06XXXXXXXX"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="exemple@gmail.com"
+                >
+
+                <label for="city">Ville *</label>
+                <input
+                    type="text"
+                    id="city"
+                    placeholder="Ex: El Jadida"
+                    required
+                >
+
+                <label for="district">Quartier</label>
+                <input
+                    type="text"
+                    id="district"
+                    placeholder="Votre quartier"
+                >
+
+                <label for="address">Adresse complète *</label>
+                <textarea
+                    id="address"
+                    placeholder="Rue, numéro, résidence..."
+                    required
+                ></textarea>
+
+                <label for="note">Note de commande</label>
+                <textarea
+                    id="note"
+                    placeholder="Une remarque concernant votre commande..."
+                ></textarea>
+
+            </form>
+
+        </div>
+
+
+        <!-- COMMANDE + PAIEMENT -->
+
+        <div class="box">
+
+            <h2>Votre commande</h2>
+
+            <div id="products"></div>
+
+            <div class="summary">
+
+                <div class="summary-line">
+                    <span>Sous-total</span>
+                    <span id="subtotal">0 DH</span>
+                </div>
+
+                <div class="summary-line">
+                    <span>Livraison</span>
+                    <span id="delivery">20 DH</span>
+                </div>
+
+                <div class="summary-line total">
+                    <span>Total</span>
+                    <span id="total">0 DH</span>
+                </div>
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <h2 style="margin-top:30px;">Mode de paiement</h2>
+
+
+            <!-- CASH -->
+
+            <div class="payment-option" id="cashOption">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="cash"
+                        checked
+                        onchange="selectPayment('cash')"
+                    >
+
+                    <span class="payment-title">
+                        💵 Paiement à la livraison
+                    </span>
+                </label>
+
+                <div class="payment-description">
+                    Vous payez en espèces lorsque votre commande arrive.
+                </div>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <div class="payment-option" id="cardOption">
+
+                <label>
+                    <input
+                        type="radio"
+                        name="payment"
+                        value="card"
+                        onchange="selectPayment('card')"
+                    >
+
+                    <span class="payment-title">
+                        💳 Paiement par carte bancaire
+                    </span>
+                </label>
+
+                <div class="payment-description">
+                    Payez votre commande en ligne avec votre carte bancaire.
+                </div>
+
+
+                <div class="card-info" id="cardInfo">
+
+                    <p>
+                        🔒 <strong>Paiement sécurisé</strong>
+                    </p>
+
+                    <p style="margin-top:8px; font-size:14px;">
+                        Après confirmation de la commande,
+                        vous serez redirigé(e) vers une page de paiement
+                        sécurisée.
+                    </p>
+
+                    <div class="secure">
+                        Les informations de votre carte ne seront pas
+                        enregistrées sur ce site.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="confirm-btn"
+                onclick="confirmOrder()"
+            >
+                Confirmer ma commande
+            </button>
+
+            <a href="panier.html" class="back-btn">
+                ← Retour au panier
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SUCCESS PAGE -->
+
+<div id="success">
+
+    <h2>✓ Commande confirmée !</h2>
+
+    <p>Merci pour votre commande chez <strong>Makeup WA&SA</strong> 💕</p>
+
+    <div class="order-number" id="orderNumber"></div>
+
+    <p id="paymentResult"></p>
+
+    <p>
+        Nous allons traiter votre commande et vous contacter
+        pour confirmer les détails de la livraison.
+    </p>
+
+    <a
+        id="whatsappLink"
+        class="whatsapp-btn"
+        target="_blank"
+    >
+        📱 Envoyer la commande sur WhatsApp
+    </a>
+
+</div>
+
+
+<script>
+
+    /* =========================
+       CONFIGURATION
+    ========================= */
+
+    const DELIVERY = 20;
+
+    const WHATSAPP_NUMBER = "212724247658";
+
+    let selectedPayment = "cash";
+
+
+    /* =========================
+       PANIER
+    ========================= */
+
+    function getCart() {
+
+        try {
+
+            return JSON.parse(
+                localStorage.getItem("makeupCart")
+            ) || [];
+
+        } catch (error) {
+
+            return [];
+
+        }
+
+    }
+
+
+    /* =========================
+       AFFICHER LA COMMANDE
+    ========================= */
+
+    function displayOrder() {
+
+        const cart = getCart();
+
+        const productsContainer =
+            document.getElementById("products");
+
+        if (cart.length === 0) {
+
+            productsContainer.innerHTML = `
+                <p style="text-align:center; padding:20px;">
+                    Votre panier est vide.
+                </p>
+            `;
+
+            document.getElementById("subtotal").textContent =
+                "0 DH";
+
+            document.getElementById("delivery").textContent =
+                "0 DH";
+
+            document.getElementById("total").textContent =
+                "0 DH";
+
+            return;
+
+        }
+
+
+        let subtotal = 0;
+
+        productsContainer.innerHTML = "";
+
+
+        cart.forEach((product) => {
+
+            const quantity =
+                Number(product.quantity) || 1;
+
+            const price =
+                Number(product.price) || 0;
+
+            const productTotal =
+                price * quantity;
+
+            subtotal += productTotal;
+
+
+            productsContainer.innerHTML += `
+
+                <div class="product-item">
+
+                    <img
+                        src="${product.image || ''}"
+                        alt="${product.name || 'Produit'}"
+                    >
+
+                    <div class="product-info">
+
+                        <h3>
+                            ${product.name || 'Produit'}
+                        </h3>
+
+                        <p>
+                            ${product.brand || ''}
+                        </p>
+
+                        <p>
+                            Quantité : ${quantity}
+                        </p>
+
+                    </div>
+
+                    <div class="price">
+                        ${productTotal.toFixed(2)} DH
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        const total = subtotal + DELIVERY;
+
+
+        document.getElementById("subtotal").textContent =
+            subtotal.toFixed(2) + " DH";
+
+        document.getElementById("delivery").textContent =
+            DELIVERY + " DH";
+
+        document.getElementById("total").textContent =
+            total.toFixed(2) + " DH";
+
+    }
+
+
+    /* =========================
+       CHOIX PAIEMENT
+       ========================= */
+
+    function selectPayment(payment) {
+
+        selectedPayment = payment;
+
+        const cashOption =
+            document.getElementById("cashOption");
+
+        const cardOption =
+            document.getElementById("cardOption");
+
+        const cardInfo =
+            document.getElementById("cardInfo");
+
+
+        cashOption.classList.remove("selected");
+
+        cardOption.classList.remove("selected");
+
+
+        if (payment === "cash") {
+
+            cashOption.classList.add("selected");
+
+            cardInfo.classList.remove("show");
+
+        } else {
+
+            cardOption.classList.add("selected");
+
+            cardInfo.classList.add("show");
+
+        }
+
+    }
+
+
+    /* =========================
+       CREATION NUMERO COMMANDE
+       ========================= */
+
+    function generateOrderNumber() {
+
+        const random =
+            Math.floor(
+                100000 +
+                Math.random() * 900000
+            );
+
+        return "WA-" + random;
+
+    }
+
+
+    /* =========================
+       CONFIRMER COMMANDE
+       ========================= */
+
+    function confirmOrder() {
+
+        const form =
+            document.getElementById("orderForm");
+
+
+        if (!form.checkValidity()) {
+
+            form.reportValidity();
+
+            return;
+
+        }
+
+
+        const cart = getCart();
+
+
+        if (cart.length === 0) {
+
+            alert(
+                "Votre panier est vide."
+            );
+
+            return;
+
+        }
+
+
+        const name =
+            document.getElementById("name").value.trim();
+
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const city =
+            document.getElementById("city").value.trim();
+
+        const district =
+            document.getElementById("district").value.trim();
+
+        const address =
+            document.getElementById("address").value.trim();
+
+        const note =
+            document.getElementById("note").value.trim();
+
+
+        let subtotal = 0;
+
+
+        cart.forEach(product => {
+
+            const quantity =
+                Number(product.quantity) || 1;
+
+            const price =
+                Number(product.price) || 0;
+
+            subtotal += price * quantity;
+
+        });
+
+
+        const total =
+            subtotal + DELIVERY;
+
+
+        const orderNumber =
+            generateOrderNumber();
+
+
+        const paymentMethod =
+            selectedPayment === "card"
+                ? "Paiement par carte bancaire"
+                : "Paiement à la livraison";
+
+
+        const order = {
+
+            orderNumber: orderNumber,
+
+            date: new Date().toLocaleString("fr-FR"),
+
+            customer: {
+
+                name: name,
+
+                phone: phone,
+
+                email: email,
+
+                city: city,
+
+                district: district,
+
+                address: address,
+
+                note: note
+
+            },
+
+            products: cart,
+
+            subtotal: subtotal,
+
+            delivery: DELIVERY,
+
+            total: total,
+
+            payment: paymentMethod
+
+        };
+
+
+        /* Sauvegarder la commande */
+
+        localStorage.setItem(
+            "makeupLastOrder",
+            JSON.stringify(order)
+        );
+
+
+        /* =========================
+           MESSAGE WHATSAPP
+           ========================= */
+
+        let message =
+
+`🛍️ *NOUVELLE COMMANDE - Makeup WA&SA*
+
+📦 *Commande :* ${orderNumber}
+
+👤 *Client :* ${name}
+📱 *Téléphone :* ${phone}
+📧 *Email :* ${email}
+
+📍 *Ville :* ${city}
+🏠 *Quartier :* ${district}
+📌 *Adresse :* ${address}
+
+💳 *Paiement :* ${paymentMethod}
+
+🛒 *Produits :*
+`;
+
+
+        cart.forEach(product => {
+
+            const quantity =
+                Number(product.quantity) || 1;
+
+            const price =
+                Number(product.price) || 0;
+
+            message +=
+                `• ${product.name} x${quantity} - ${(price * quantity).toFixed(2)} DH\n`;
+
+        });
+
+
+        message += `
+
+💰 *Sous-total :* ${subtotal.toFixed(2)} DH
+🚚 *Livraison :* ${DELIVERY} DH
+💵 *TOTAL :* ${total.toFixed(2)} DH
+`;
+
+
+        if (note) {
+
+            message +=
+                `\n📝 *Note :* ${note}\n`;
+
+        }
+
+
+        message +=
+            `\nMerci 💕`;
+
+
+        const whatsappURL =
+            "https://wa.me/" +
+            WHATSAPP_NUMBER +
+            "?text=" +
+            encodeURIComponent(message);
+
+
+        document.getElementById(
+            "whatsappLink"
+        ).href = whatsappURL;
+
+
+        /* =========================
+           AFFICHAGE SUCCÈS
+           ========================= */
+
+        document.getElementById(
+            "orderNumber"
+        ).textContent =
+            "N° " + orderNumber;
+
+
+        document.getElementById(
+            "paymentResult"
+        ).innerHTML =
+            "Mode de paiement : <strong>" +
+            paymentMethod +
+            "</strong>";
+
+
+        document.getElementById(
+            "checkoutPage"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "success"
+        ).style.display = "block";
+
+
+        /* Supprimer le panier */
+
+        localStorage.removeItem(
+            "makeupCart"
+        );
+
+    }
+
+
+    /* =========================
+       INITIALISATION
+       ========================= */
+
+    displayOrder();
+
+    selectPayment("cash");
+
+</script>
+
+</body>
+</html>

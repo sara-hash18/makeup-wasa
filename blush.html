@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blush | Makeup WA&SA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#faf7f3;
+    color:#2b2020;
+}
+
+/* HEADER */
+
+header{
+    background:#3a1721;
+    color:white;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-family:Georgia,serif;
+    font-size:25px;
+    letter-spacing:1px;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#e8b7bd;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:75px 20px 55px;
+    background:linear-gradient(135deg,#f8e9eb,#fdf9f6);
+}
+
+.small-title{
+    color:#a05268;
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:48px;
+    font-weight:normal;
+    color:#351923;
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    color:#766568;
+    line-height:1.8;
+    font-size:15px;
+}
+
+/* PRODUCTS */
+
+.products-section{
+    padding:60px 6%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-family:Georgia,serif;
+    font-size:30px;
+    font-weight:normal;
+    color:#3a1721;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#8a777a;
+    font-size:14px;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+    max-width:900px;
+    margin:auto;
+}
+
+/* CARD */
+
+.product-card{
+    background:white;
+    text-decoration:none;
+    color:inherit;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(60,30,35,.08);
+    transition:.4s ease;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(60,30,35,.16);
+}
+
+.product-image{
+    height:430px;
+    background:#f8efee;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.05);
+}
+
+.product-info{
+    padding:25px 20px 30px;
+    text-align:center;
+}
+
+.product-category{
+    color:#a35b68;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.product-name{
+    font-family:Georgia,serif;
+    font-size:25px;
+    color:#351923;
+    margin-bottom:12px;
+}
+
+.product-description{
+    color:#827276;
+    font-size:13px;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.discover-btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#3a1721;
+    color:white;
+    font-size:12px;
+    letter-spacing:1px;
+    border-radius:2px;
+    transition:.3s;
+}
+
+.product-card:hover .discover-btn{
+    background:#8e4b5a;
+}
+
+/* BACK */
+
+.back-section{
+    text-align:center;
+    padding:20px 20px 70px;
+}
+
+.back-btn{
+    color:#6d414b;
+    text-decoration:none;
+    font-size:14px;
+    border-bottom:1px solid #c8a5aa;
+    padding-bottom:5px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#3a1721;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    font-size:13px;
+}
+
+footer p{
+    opacity:.85;
+    line-height:1.7;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:700px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:18px;
+    }
+
+    nav{
+        gap:18px;
+    }
+
+    .hero{
+        padding:55px 20px 45px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .products-section{
+        padding:45px 20px;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+        max-width:450px;
+    }
+
+    .product-image{
+        height:380px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        💄 Makeup WA&SA
+    </div>
+
+    <nav>
+
+        <a href="makeuo.html">
+            Accueil
+        </a>
+
+        <a href="produits.html">
+            Produits
+        </a>
+
+        <a href="panier.html">
+            🛒 Panier
+        </a>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="small-title">
+        Éclat naturel
+    </div>
+
+    <h1>
+        Blush
+    </h1>
+
+    <p>
+        Découvrez notre collection de blushs
+        pour apporter une touche de couleur
+        et d'éclat à votre teint.
+    </p>
+
+</section>
+
+
+<section class="products-section">
+
+    <div class="section-title">
+
+        <h2>
+            Notre collection Blush
+        </h2>
+
+        <p>
+            Choisissez votre type de blush
+            et découvrez notre sélection.
+        </p>
+
+    </div>
+
+
+    <div class="products-grid">
+
+
+        <!-- BLUSH -->
+
+        <a href="blush-details.html?type=blush"
+           class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="blush.jpeg"
+                    alt="Blush"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Collection
+                </div>
+
+                <div class="product-name">
+                    Blush
+                </div>
+
+                <p class="product-description">
+                    Découvrez nos blushs poudre
+                    dans différentes teintes
+                    élégantes et naturelles.
+                </p>
+
+                <span class="discover-btn">
+                    Découvrir
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- BLUSH CREAM COLOR -->
+
+        <a href="blush-details.html?type=cream"
+           class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="blush cream color.jpeg"
+                    alt="Blush Cream Color"
+                >
+
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    Collection
+                </div>
+
+                <div class="product-name">
+                    Blush Cream Color
+                </div>
+
+                <p class="product-description">
+                    Découvrez nos blushs crème
+                    avec plusieurs teintes
+                    douces et lumineuses.
+                </p>
+
+                <span class="discover-btn">
+                    Découvrir
+                </span>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<section class="back-section">
+
+    <a href="produits.html" class="back-btn">
+        ← Retour aux produits
+    </a>
+
+</section>
+
+
+<footer>
+
+    <p>
+        © 2026 Makeup WA&SA — La beauté commence avec toi ✨
+    </p>
+
+</footer>
+
+
+</body>
+</html>

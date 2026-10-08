@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Palettes | Makeup WA&SA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:#faf7f5;
+    color:#321b20;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(135deg,#4d1724,#7d3041,#c47b89);
+    color:white;
+    text-align:center;
+    padding:50px 20px 42px;
+}
+
+header h1{
+    font-size:44px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+header p{
+    font-size:17px;
+    font-style:italic;
+}
+
+/* NAV */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.97);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:17px 15px;
+    box-shadow:0 3px 15px rgba(0,0,0,0.10);
+}
+
+nav a{
+    color:#4d1724;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+    letter-spacing:1px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#c47b89;
+}
+
+/* INTRO */
+
+.intro{
+    text-align:center;
+    padding:55px 20px 30px;
+}
+
+.intro h2{
+    color:#5b1f2d;
+    font-size:37px;
+    margin-bottom:14px;
+}
+
+.intro p{
+    color:#73555c;
+    font-size:16px;
+    line-height:1.8;
+}
+
+/* PRODUCTS */
+
+.products{
+    width:90%;
+    max-width:1200px;
+    margin:30px auto 65px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 7px 25px rgba(70,20,30,0.12);
+    transition:0.4s;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(70,20,30,0.20);
+}
+
+/* IMAGE */
+
+.product-image{
+    width:100%;
+    height:350px;
+    background:#f5eeee;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.product-card:hover img{
+    transform:scale(1.05);
+}
+
+/* INFO */
+
+.product-info{
+    text-align:center;
+    padding:22px 18px 25px;
+}
+
+.product-info h3{
+    color:#5b1f2d;
+    font-size:21px;
+    margin-bottom:10px;
+}
+
+.category{
+    color:#9a6b75;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    margin-bottom:10px;
+}
+
+.price{
+    color:#4d1724;
+    font-size:19px;
+    font-weight:bold;
+    margin-bottom:16px;
+}
+
+/* BUTTON */
+
+.add-btn{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    padding:13px 18px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#5b1f2d,#a34d61);
+    color:white;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:15px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.add-btn:hover{
+    background:linear-gradient(135deg,#a34d61,#5b1f2d);
+}
+
+/* COMMENTS */
+
+.comments-section{
+    width:90%;
+    max-width:900px;
+    margin:20px auto 65px;
+}
+
+.comments-title{
+    text-align:center;
+    color:#5b1f2d;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.comments-subtitle{
+    text-align:center;
+    color:#73555c;
+    margin-bottom:30px;
+    line-height:1.7;
+}
+
+.comment-form{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 7px 25px rgba(70,20,30,0.10);
+    margin-bottom:35px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    color:#5b1f2d;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:13px 15px;
+    border:1px solid #e2cbd0;
+    border-radius:12px;
+    background:#fffafa;
+    color:#321b20;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:14px;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#a35b68;
+}
+
+.form-group textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.rating-select{
+    display:flex;
+    gap:7px;
+    flex-direction:row-reverse;
+    justify-content:flex-end;
+}
+
+.rating-select input{
+    display:none;
+}
+
+.rating-select label{
+    font-size:28px;
+    color:#d9c2c7;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+.rating-select label:hover,
+.rating-select label:hover ~ label,
+.rating-select input:checked ~ label{
+    color:#c47b89;
+}
+
+.comment-btn{
+    width:100%;
+    border:none;
+    cursor:pointer;
+    padding:14px 20px;
+    border-radius:30px;
+    background:linear-gradient(135deg,#5b1f2d,#a34d61);
+    color:white;
+    font-family:Georgia, "Times New Roman", serif;
+    font-size:15px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.comment-btn:hover{
+    background:linear-gradient(135deg,#a34d61,#5b1f2d);
+}
+
+/* REVIEWS */
+
+.reviews-container{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.review-card{
+    background:white;
+    border-radius:18px;
+    padding:22px;
+    box-shadow:0 5px 20px rgba(70,20,30,0.09);
+    border-left:4px solid #c47b89;
+}
+
+.review-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:8px;
+}
+
+.review-name{
+    color:#5b1f2d;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.review-stars{
+    color:#c47b89;
+    letter-spacing:2px;
+}
+
+.review-product{
+    color:#9a6b75;
+    font-size:13px;
+    margin-bottom:10px;
+}
+
+.review-text{
+    color:#5d484d;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.no-reviews{
+    text-align:center;
+    color:#8b7076;
+    padding:25px;
+    background:white;
+    border-radius:18px;
+}
+
+/* BACK */
+
+.back{
+    text-align:center;
+    margin-bottom:65px;
+}
+
+.back a{
+    display:inline-block;
+    text-decoration:none;
+    color:#5b1f2d;
+    border:1px solid #c47b89;
+    padding:12px 28px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.back a:hover{
+    background:#5b1f2d;
+    color:white;
+}
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#4d1724;
+    color:white;
+    padding:15px 22px;
+    border-radius:30px;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(20px);
+    transition:0.3s;
+    z-index:2000;
+}
+
+.toast.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+}
+
+/* EMPTY */
+
+.empty{
+    text-align:center;
+    padding:70px 20px;
+    color:#73555c;
+    font-size:20px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#321b20;
+    color:white;
+    text-align:center;
+    padding:28px 20px;
+}
+
+footer p{
+    font-size:14px;
+    margin:5px 0;
+}
+
+footer a{
+    color:#f1b8c4;
+    text-decoration:none;
+}
+
+/* TABLET */
+
+@media(max-width:900px){
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:32px;
+    }
+
+    nav{
+        gap:12px;
+    }
+
+    nav a{
+        font-size:11px;
+    }
+
+    .products{
+        width:92%;
+        grid-template-columns:1fr;
+        gap:25px;
+    }
+
+    .product-image{
+        height:360px;
+    }
+
+    .comments-section{
+        width:92%;
+    }
+
+    .comment-form{
+        padding:22px;
+    }
+
+    .review-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <h1>💄 Makeup WA&SA</h1>
+
+    <p>La beauté commence avec toi ✨</p>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+    <a href="makeuo.html">ACCUEIL</a>
+
+    <a href="produits.html">PRODUITS</a>
+
+    <a href="rouge.html">ROUGES À LÈVRES</a>
+
+    <a href="palette.html">PALETTES</a>
+
+    <a href="panier.html">
+        🛍 PANIER (<span id="cartCount">0</span>)
+    </a>
+
+</nav>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <h2 id="pageTitle">
+        Notre collection
+    </h2>
+
+    <p id="pageDescription">
+        Découvrez nos palettes.
+    </p>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section
+    class="products"
+    id="productsContainer"
+></section>
+
+
+<!-- COMMENTS -->
+
+<section class="comments-section">
+
+    <h2 class="comments-title">
+        💬 Vos avis
+    </h2>
+
+    <p class="comments-subtitle">
+        Vous avez testé cette collection ?<br>
+        Partagez votre avis avec nous ✨
+    </p>
+
+
+    <!-- FORM -->
+
+    <form
+        class="comment-form"
+        id="commentForm"
+    >
+
+        <div class="form-group">
+
+            <label for="reviewName">
+                Votre nom
+            </label>
+
+            <input
+                type="text"
+                id="reviewName"
+                placeholder="Entrez votre nom"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="reviewProduct">
+                Produit
+            </label>
+
+            <select
+                id="reviewProduct"
+                required
+            ></select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Votre note
+            </label>
+
+            <div class="rating-select">
+
+                <input
+                    type="radio"
+                    id="star5"
+                    name="rating"
+                    value="5"
+                    required
+                >
+                <label for="star5">★</label>
+
+
+                <input
+                    type="radio"
+                    id="star4"
+                    name="rating"
+                    value="4"
+                >
+                <label for="star4">★</label>
+
+
+                <input
+                    type="radio"
+                    id="star3"
+                    name="rating"
+                    value="3"
+                >
+                <label for="star3">★</label>
+
+
+                <input
+                    type="radio"
+                    id="star2"
+                    name="rating"
+                    value="2"
+                >
+                <label for="star2">★</label>
+
+
+                <input
+                    type="radio"
+                    id="star1"
+                    name="rating"
+                    value="1"
+                >
+                <label for="star1">★</label>
+
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="reviewComment">
+                Votre commentaire
+            </label>
+
+            <textarea
+                id="reviewComment"
+                placeholder="Écrivez votre avis..."
+                required
+            ></textarea>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="comment-btn"
+        >
+            ✨ Publier mon avis
+        </button>
+
+    </form>
+
+
+    <!-- REVIEWS -->
+
+    <div
+        class="reviews-container"
+        id="reviewsContainer"
+    ></div>
+
+</section>
+
+
+<!-- BACK -->
+
+<div class="back">
+
+    <a href="palette.html">
+        ← Retour aux palettes
+    </a>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    class="toast"
+    id="toast"
+>
+    ✨ Produit ajouté au panier
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+        © 2026 Makeup WA&SA — Tous droits réservés ✨
+    </p>
+
+    <p>
+        Contact :
+        <a href="mailto:contact@makeupwasa.com">
+            contact@makeupwasa.com
+        </a>
+    </p>
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   COLLECTIONS
+===================================================== */
+
+const collections = {
+
+    /* ================= PALETTE SHADES ================= */
+
+    shades:{
+
+        title:"Palette Shades",
+
+        description:
+        "Découvrez notre sélection de palettes aux différentes nuances.",
+
+        products:[
+
+            {
+                name:"Yellow Palette",
+                image:"yellow pallete.jpeg",
+                price:129
+            },
+
+            {
+                name:"Palette Orange",
+                image:"palette orange.jpeg",
+                price:129
+            },
+
+            {
+                name:"Palette Rose",
+                image:"palette rose.jpeg",
+                price:129
+            }
+
+        ]
+
+    },
+
+
+    /* ================= ESSENCE ================= */
+
+    essence:{
+
+        title:"Essence Palette",
+
+        description:
+        "Découvrez notre collection Essence et ses différentes palettes.",
+
+        products:[
+
+            {
+                name:"Brown edition",
+                image:"essence1.jpeg",
+                price:119
+            },
+
+            {
+                name:"Cool nude edition",
+                image:"essence2.jpeg",
+                price:119
+            },
+
+            {
+                name:"Rose edition",
+                image:"essence3.jpeg",
+                price:119
+            },
+
+            {
+                name:"Nude edition",
+                image:"essence4.jpeg",
+                price:119
+            },
+
+            {
+                name:"Cool nude edition",
+                image:"essence5.jpeg",
+                price:119
+            }
+
+        ]
+
+    },
+
+
+    /* ================= REVOLUTION ================= */
+
+    revolution:{
+
+        title:"Revolution Palette",
+
+        description:
+        "Explorez les différentes couleurs de nos palettes Revolution.",
+
+        products:[
+
+            {
+                name:"Tons doux et pastels",
+                image:"couleur1.jpeg",
+                price:139
+            },
+
+            {
+                name:"Tons vifs et pop",
+                image:"couleur2.jpeg",
+                price:139
+            },
+
+            {
+                name:"Tons dorés et chaud",
+                image:"couleur3.jpeg",
+                price:139
+            },
+
+            {
+                name:"Tons orangé et terracota",
+                image:"couleur4.jpeg",
+                price:139
+            },
+
+            {
+                name:"Tons chaud et péche",
+                image:"couleur5.jpeg",
+                price:139
+            },
+
+            {
+                name:"Tons froids et prune",
+                image:"couleur6.jpeg",
+                price:139
+            },
+
+            {
+                name:"Tons roses et nudes",
+                image:"couleur7.jpeg",
+                price:139
+            },
+
+            {
+                name:"Tons neutres et terre",
+                image:"couleur8.jpeg",
+                price:139
+            },
+
+            {
+                name:"Tons instenses et bordeaux",
+                image:"couleur9.jpeg",
+                price:139
+            }
+
+        ]
+
+    }
+
+};
+
+
+/* =====================================================
+   CATEGORY
+===================================================== */
+
+const params =
+new URLSearchParams(window.location.search);
+
+const category =
+params.get("category");
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const pageTitle =
+document.getElementById("pageTitle");
+
+const pageDescription =
+document.getElementById("pageDescription");
+
+const productsContainer =
+document.getElementById("productsContainer");
+
+const reviewProduct =
+document.getElementById("reviewProduct");
+
+const reviewsContainer =
+document.getElementById("reviewsContainer");
+
+const commentForm =
+document.getElementById("commentForm");
+
+
+/* =====================================================
+   DISPLAY COLLECTION
+===================================================== */
+
+function displayCollection(){
+
+    const collection =
+    collections[category];
+
+
+    if(!collection){
+
+        pageTitle.textContent =
+        "Collection introuvable";
+
+        pageDescription.textContent =
+        "Veuillez choisir une collection.";
+
+        productsContainer.innerHTML = `
+            <div class="empty">
+                ✨ Cette collection n'existe pas.
+            </div>
+        `;
+
+        return;
+    }
+
+
+    pageTitle.textContent =
+    collection.title;
+
+
+    pageDescription.textContent =
+    collection.description;
+
+
+    productsContainer.innerHTML="";
+
+
+    collection.products.forEach(
+        function(product,index){
+
+            const card =
+            document.createElement("article");
+
+            card.className =
+            "product-card";
+
+
+            card.innerHTML = `
+
+                <div class="product-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                    >
+
+                </div>
+
+
+                <div class="product-info">
+
+                    <div class="category">
+                        ${collection.title}
+                    </div>
+
+                    <h3>
+                        ${product.name}
+                    </h3>
+
+                    <div class="price">
+                        ${product.price} DH
+                    </div>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart(${index})"
+                    >
+                        🛍 Ajouter au panier
+                    </button>
+
+                </div>
+
+            `;
+
+
+            productsContainer.appendChild(card);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   GET CART
+===================================================== */
+
+function getCart(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem("makeupCart")
+        ) || [];
+
+    }catch(error){
+
+        return [];
+
+    }
+
+}
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+function addToCart(index){
+
+    const collection =
+    collections[category];
+
+
+    if(!collection){
+        return;
+    }
+
+
+    const product =
+    collection.products[index];
+
+
+    let cart =
+    getCart();
+
+
+    const existing =
+    cart.find(function(item){
+
+        return item.name === product.name;
+
+    });
+
+
+    if(existing){
+
+        existing.quantity =
+        (Number(existing.quantity) || 0) + 1;
+
+    }else{
+
+        cart.push({
+
+            name:product.name,
+
+            price:product.price,
+
+            image:product.image,
+
+            brand:"Makeup WA&SA",
+
+            quantity:1
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "makeupCart",
+        JSON.stringify(cart)
+    );
+
+
+    updateCartCount();
+
+    showToast();
+
+}
+
+
+/* =====================================================
+   CART COUNT
+===================================================== */
+
+function updateCartCount(){
+
+    const cart =
+    getCart();
+
+
+    let total=0;
+
+
+    cart.forEach(function(item){
+
+        total +=
+        Number(item.quantity) || 1;
+
+    });
+
+
+    document.getElementById(
+        "cartCount"
+    ).textContent = total;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(){
+
+    const toast =
+    document.getElementById("toast");
+
+
+    toast.classList.add("show");
+
+
+    setTimeout(function(){
+
+        toast.classList.remove("show");
+
+    },2200);
+
+}
+
+
+/* =====================================================
+   REVIEWS STORAGE
+===================================================== */
+
+function getReviewKey(){
+
+    return "paletteReviews_" + category;
+
+}
+
+
+function getReviews(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem(getReviewKey())
+        ) || [];
+
+    }catch(error){
+
+        return [];
+
+    }
+
+}
+
+
+/* =====================================================
+   STARS
+===================================================== */
+
+function getStars(rating){
+
+    let stars="";
+
+    for(let i=1;i<=5;i++){
+
+        if(i <= rating){
+
+            stars += "★";
+
+        }else{
+
+            stars += "☆";
+
+        }
+
+    }
+
+    return stars;
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(text){
+
+    const div =
+    document.createElement("div");
+
+    div.textContent =
+    text;
+
+    return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   FILL PRODUCT SELECT
+===================================================== */
+
+function fillReviewProducts(){
+
+    reviewProduct.innerHTML="";
+
+
+    const collection =
+    collections[category];
+
+
+    if(!collection){
+        return;
+    }
+
+
+    collection.products.forEach(
+        function(product){
+
+            const option =
+            document.createElement("option");
+
+            option.value =
+            product.name;
+
+            option.textContent =
+            product.name;
+
+            reviewProduct.appendChild(option);
+
+        }
+    );
+
+}
+
+
+/* =====================================================
+   DISPLAY REVIEWS
+===================================================== */
+
+function displayReviews(){
+
+    const reviews =
+    getReviews();
+
+
+    if(reviews.length === 0){
+
+        reviewsContainer.innerHTML = `
+            <div class="no-reviews">
+                💕 Aucun avis pour le moment.<br>
+                Soyez la première à partager votre expérience !
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    reviewsContainer.innerHTML="";
+
+
+    reviews.forEach(function(review){
+
+        const card =
+        document.createElement("div");
+
+        card.className =
+        "review-card";
+
+
+        card.innerHTML = `
+
+            <div class="review-top">
+
+                <div class="review-name">
+                    ${escapeHTML(review.name)}
+                </div>
+
+                <div class="review-stars">
+                    ${getStars(review.rating)}
+                </div>
+
+            </div>
+
+
+            <div class="review-product">
+
+                💄 ${escapeHTML(review.product)}
+
+            </div>
+
+
+            <div class="review-text">
+
+                ${escapeHTML(review.comment)}
+
+            </div>
+
+        `;
+
+
+        reviewsContainer.appendChild(card);
+
+    });
+
+}
+
+
+/* =====================================================
+   ADD REVIEW
+===================================================== */
+
+commentForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        if(!collections[category]){
+            return;
+        }
+
+
+        const name =
+        document.getElementById(
+            "reviewName"
+        ).value.trim();
+
+
+        const product =
+        reviewProduct.value;
+
+
+        const ratingElement =
+        document.querySelector(
+            'input[name="rating"]:checked'
+        );
+
+
+        const comment =
+        document.getElementById(
+            "reviewComment"
+        ).value.trim();
+
+
+        if(!name || !product || !ratingElement || !comment){
+
+            alert(
+                "Veuillez remplir tous les champs."
+            );
+
+            return;
+
+        }
+
+
+        const review = {
+
+            name:name,
+
+            product:product,
+
+            rating:Number(
+                ratingElement.value
+            ),
+
+            comment:comment
+
+        };
+
+
+        const reviews =
+        getReviews();
+
+
+        reviews.unshift(review);
+
+
+        localStorage.setItem(
+
+            getReviewKey(),
+
+            JSON.stringify(reviews)
+
+        );
+
+
+        commentForm.reset();
+
+
+        displayReviews();
+
+
+        alert(
+            "✨ Merci pour votre avis !"
+        );
+
+    }
+);
+
+
+/* =====================================================
+   START
+===================================================== */
+
+displayCollection();
+
+fillReviewProducts();
+
+displayReviews();
+
+updateCartCount();
+
+</script>
+
+
+</body>
+
+</html>

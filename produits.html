@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Produits | Makeup WA&SA</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf7f5;
+            color: #2d2023;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background:
+                linear-gradient(rgba(40,20,25,.55), rgba(40,20,25,.55)),
+                url("image1.jpeg") center/cover;
+
+            min-height: 420px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 30px 20px;
+        }
+
+        header .small-title {
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 55px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 17px;
+            letter-spacing: 1px;
+        }
+
+
+        /* ================= NAV ================= */
+
+        nav {
+            background: rgba(255,255,255,.96);
+
+            padding: 18px;
+
+            text-align: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 100;
+
+            box-shadow: 0 3px 20px rgba(0,0,0,.08);
+        }
+
+        nav a {
+            color: #4b3439;
+            text-decoration: none;
+
+            margin: 0 18px;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            text-transform: uppercase;
+            letter-spacing: 1px;
+
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #a35b72;
+        }
+
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: auto;
+
+            padding: 70px 20px 45px;
+        }
+
+        .intro span {
+            color: #a35b72;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+        }
+
+        .intro h2 {
+            font-family: Georgia, serif;
+
+            font-size: 38px;
+
+            margin: 12px 0 18px;
+
+            color: #332326;
+        }
+
+        .intro p {
+            color: #76666a;
+            font-size: 16px;
+        }
+
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            width: 92%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 30px;
+
+            padding-bottom: 70px;
+        }
+
+
+        /* ================= CARD ================= */
+
+        .product-card {
+            background: white;
+
+            text-decoration: none;
+
+            color: inherit;
+
+            border-radius: 4px;
+
+            overflow: hidden;
+
+            box-shadow: 0 10px 35px rgba(0,0,0,.08);
+
+            transition: .4s;
+
+            display: block;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,.14);
+        }
+
+
+        /* ================= IMAGE ================= */
+
+        .product-image {
+            height: 330px;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.06);
+        }
+
+
+        /* ================= CONTENT ================= */
+
+        .product-content {
+            padding: 25px;
+
+            text-align: center;
+        }
+
+        .category {
+            font-size: 11px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            color: #a35b72;
+        }
+
+        .product-content h3 {
+            font-family: Georgia, serif;
+
+            font-size: 28px;
+
+            margin: 8px 0 10px;
+
+            color: #302124;
+        }
+
+        .product-content p {
+            color: #77686c;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .discover {
+            display: inline-block;
+
+            border: 1px solid #a35b72;
+
+            color: #a35b72;
+
+            padding: 11px 24px;
+
+            text-decoration: none;
+
+            font-size: 12px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+
+            transition: .3s;
+        }
+
+        .product-card:hover .discover {
+            background: #a35b72;
+            color: white;
+        }
+
+
+        /* ================= BEAUTY MESSAGE ================= */
+
+        .beauty-message {
+            width: 92%;
+            max-width: 1100px;
+
+            margin: 10px auto 70px;
+
+            background: #eee1e3;
+
+            text-align: center;
+
+            padding: 50px 25px;
+        }
+
+        .beauty-message span {
+            color: #a35b72;
+
+            font-size: 12px;
+
+            letter-spacing: 4px;
+        }
+
+        .beauty-message h2 {
+            font-family: Georgia, serif;
+
+            font-size: 32px;
+
+            margin: 12px 0;
+        }
+
+        .beauty-message p {
+            color: #66575b;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #2d2023;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 55px 20px;
+        }
+
+        .contact h2 {
+            font-family: Georgia, serif;
+
+            font-size: 32px;
+
+            margin-bottom: 12px;
+        }
+
+        .contact p {
+            color: #ddd0d3;
+
+            margin: 7px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #211719;
+
+            color: #cdbdc1;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                min-height: 350px;
+            }
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 11px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+
+            .intro h2 {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="small-title">
+            Makeup WA&SA
+        </div>
+
+        <h1>Our Beauty Collection</h1>
+
+        <p>
+            Découvrez votre univers beauté
+        </p>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="makeuo.html">Accueil</a>
+
+        <a href="produits.html">Produits</a>
+
+        <a href="makeuo.html#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="intro">
+
+        <span>MAKEUP WA&SA</span>
+
+        <h2>
+            Découvrez nos produits
+        </h2>
+
+        <p>
+            Explorez notre sélection beauté et découvrez
+            nos différentes collections de maquillage et de parfum.
+        </p>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="products">
+
+
+        <!-- ROUGE -->
+
+        <a href="rouge.html" class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="typesdesrouge.jpeg"
+                    alt="Rouge à lèvres"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Lips
+                </span>
+
+                <h3>
+                    Rouge à lèvres
+                </h3>
+
+                <p>
+                    Découvrez nos différentes teintes,
+                    couleurs et finitions.
+                </p>
+
+                <span class="discover">
+                    Découvrir
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- FOND DE TEINT -->
+
+        <a href="fond.html" class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="fond.jpeg"
+                    alt="Fond de teint"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Teint
+                </span>
+
+                <h3>
+                    Fond de teint
+                </h3>
+
+                <p>
+                    Trouvez votre teinte parfaite
+                    pour un teint naturel et lumineux.
+                </p>
+
+                <span class="discover">
+                    Découvrir
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- BLUSH -->
+
+        <a href="blush.html" class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="blush.jpeg"
+                    alt="Blush"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Teint
+                </span>
+
+                <h3>
+                    Blush
+                </h3>
+
+                <p>
+                    Rose, nude, peach ou crème :
+                    trouvez votre couleur idéale.
+                </p>
+
+                <span class="discover">
+                    Découvrir
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- MASCARA -->
+        <a href="mascara.html" class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="mascaraw.jpeg"
+                    alt="Mascara"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Eyes
+                </span>
+
+                <h3>
+                    Mascara
+                </h3>
+
+                <p>
+                    Volume, longueur et différentes
+                    couleurs pour vos cils.
+                </p>
+
+                <span class="discover">
+                    Découvrir
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- PALETTE -->
+
+        <a href="palette.html" class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="palette.jpeg"
+                    alt="Palette de maquillage"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Eyes
+                </span>
+
+                <h3>
+                    Palette
+                </h3>
+
+                <p>
+                    Des palettes aux couleurs variées
+                    pour créer différents looks.
+                </p>
+
+                <span class="discover">
+                    Découvrir
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <!-- PARFUM -->
+
+        <a href="parfum.html" class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="parfum.jpeg"
+                    alt="Parfum"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Fragrance
+                </span>
+
+                <h3>
+                    Parfum
+                </h3>
+
+                <p>
+                    Découvrez une sélection de parfums
+                    pour trouver votre signature.
+                </p>
+
+                <span class="discover">
+                    Découvrir
+                </span>
+
+            </div>
+
+        </a>
+
+
+    </section>
+
+
+    <!-- ================= MESSAGE ================= -->
+
+    <section class="beauty-message">
+
+        <span>
+            YOUR BEAUTY · YOUR STYLE
+        </span>
+
+        <h2>
+            La beauté commence avec toi ✨
+        </h2>
+
+        <p>
+            Prenez le temps de découvrir les produits
+            qui correspondent à votre style.
+        </p>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section class="contact" id="contact">
+
+        <h2>
+            Contact
+        </h2>
+
+        <p>
+            Une question sur nos produits ?
+        </p>
+
+        <p>
+            📧 contact@makeupwasa.com
+        </p>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Makeup WA&SA
+        </p>
+
+        <p>
+            Tous droits réservés ♡
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

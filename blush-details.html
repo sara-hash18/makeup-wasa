@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blush | Makeup WA&SA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#faf7f3;
+    color:#2b2020;
+}
+
+
+/* ================= HEADER ================= */
+
+header{
+    background:#3a1721;
+    color:white;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 15px rgba(0,0,0,.15);
+}
+
+.logo{
+    font-family:Georgia,serif;
+    font-size:25px;
+    letter-spacing:1px;
+}
+
+nav{
+    display:flex;
+    gap:28px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#e8b7bd;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    text-align:center;
+    padding:65px 20px 50px;
+    background:linear-gradient(135deg,#f8e9eb,#fdf9f6);
+}
+
+.small-title{
+    color:#a05268;
+    font-size:13px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-family:Georgia,serif;
+    font-size:44px;
+    font-weight:normal;
+    color:#351923;
+    margin-bottom:15px;
+}
+
+.hero p{
+    color:#766568;
+    line-height:1.8;
+    font-size:14px;
+}
+
+
+/* ================= PRODUCTS ================= */
+
+.products-section{
+    padding:60px 6%;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:28px;
+    max-width:1200px;
+    margin:auto;
+}
+
+
+/* ================= CARD ================= */
+
+.product-card{
+    background:white;
+    border-radius:6px;
+    overflow:hidden;
+    box-shadow:0 8px 30px rgba(60,30,35,.08);
+    transition:.4s;
+}
+
+.product-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(60,30,35,.16);
+}
+
+.product-image{
+    height:330px;
+    background:#f8efee;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.product-card:hover img{
+    transform:scale(1.05);
+}
+
+.product-info{
+    padding:23px 18px 25px;
+    text-align:center;
+}
+
+.category{
+    color:#a35b68;
+    font-size:10px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:10px;
+}
+
+.product-name{
+    font-family:Georgia,serif;
+    font-size:21px;
+    color:#351923;
+    margin-bottom:10px;
+}
+
+.description{
+    color:#827276;
+    font-size:12px;
+    line-height:1.6;
+    margin-bottom:15px;
+}
+
+.price{
+    color:#3a1721;
+    font-size:16px;
+    font-weight:bold;
+    margin-bottom:17px;
+}
+
+.add-btn{
+    border:none;
+    background:#3a1721;
+    color:white;
+    padding:12px 20px;
+    cursor:pointer;
+    font-size:12px;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.add-btn:hover{
+    background:#8e4b5a;
+}
+
+.message{
+    display:none;
+    margin-top:12px;
+    color:#527557;
+    font-size:12px;
+}
+
+
+/* ================= AVIS ================= */
+
+.reviews-section{
+    background:white;
+    padding:70px 6%;
+    margin-top:20px;
+}
+
+.reviews-title{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.reviews-title h2{
+    font-family:Georgia,serif;
+    font-size:32px;
+    font-weight:normal;
+    color:#351923;
+    margin:10px 0;
+}
+
+.reviews-title p{
+    color:#827276;
+    font-size:13px;
+}
+
+
+/* ================= FORMULAIRE ================= */
+
+.review-form{
+    max-width:650px;
+    margin:auto;
+    background:#faf7f3;
+    padding:30px;
+    border-radius:8px;
+    box-shadow:0 8px 25px rgba(60,30,35,.08);
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea{
+    width:100%;
+    padding:13px;
+    margin-bottom:13px;
+    border:1px solid #dfc9cd;
+    background:white;
+    font-family:Arial,sans-serif;
+    color:#3a1721;
+}
+
+.review-form textarea{
+    height:110px;
+    resize:none;
+}
+
+.review-form button{
+    width:100%;
+    border:none;
+    background:#3a1721;
+    color:white;
+    padding:13px;
+    cursor:pointer;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.review-form button:hover{
+    background:#8e4b5a;
+}
+
+
+/* ================= COMMENTAIRES ================= */
+
+.reviews-list{
+    max-width:900px;
+    margin:40px auto 0;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.review-card{
+    background:#faf7f3;
+    padding:22px;
+    border-left:3px solid #a35b68;
+}
+
+.review-name{
+    font-weight:bold;
+    color:#351923;
+    margin-bottom:7px;
+}
+
+.review-product{
+    color:#a35b68;
+    font-size:12px;
+    margin-bottom:7px;
+}
+
+.review-stars{
+    color:#b47a86;
+    margin-bottom:10px;
+    letter-spacing:2px;
+}
+
+.review-text{
+    color:#766568;
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* ================= BACK ================= */
+
+.back-section{
+    text-align:center;
+    padding:20px 20px 70px;
+}
+
+.back-btn{
+    color:#6d414b;
+    text-decoration:none;
+    font-size:14px;
+    border-bottom:1px solid #c8a5aa;
+    padding-bottom:5px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#3a1721;
+    color:white;
+    text-align:center;
+    padding:30px 20px;
+    font-size:13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:600px){
+
+    header{
+        flex-direction:column;
+        gap:15px;
+        padding:18px;
+    }
+
+    nav{
+        gap:18px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .products-section{
+        padding:45px 20px;
+    }
+
+    .products-grid{
+        grid-template-columns:1fr;
+        max-width:420px;
+    }
+
+    .reviews-list{
+        grid-template-columns:1fr;
+    }
+
+    .reviews-section{
+        padding:50px 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="logo">
+        💄 Makeup WA&SA
+    </div>
+
+    <nav>
+
+        <a href="makeuo.html">
+            Accueil
+        </a>
+
+        <a href="produits.html">
+            Produits
+        </a>
+
+        <a href="blush.html">
+            Blush
+        </a>
+
+        <a href="panier.html">
+            🛒 Panier
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="small-title">
+        Makeup WA&SA
+    </div>
+
+    <h1 id="pageTitle">
+        Blush
+    </h1>
+
+    <p id="pageDescription">
+        Découvrez notre sélection de blushs.
+    </p>
+
+</section>
+
+
+<!-- ================= PRODUITS ================= -->
+
+<section class="products-section">
+
+    <div class="products-grid" id="productsGrid">
+    </div>
+
+</section>
+
+
+<!-- ================= AVIS CLIENTS ================= -->
+
+<section class="reviews-section">
+
+    <div class="reviews-title">
+
+        <div class="small-title">
+            Avis clients
+        </div>
+
+        <h2>
+            Votre avis compte
+        </h2>
+
+        <p>
+            Partagez votre expérience avec votre teinte préférée.
+        </p>
+
+    </div>
+
+
+    <!-- FORMULAIRE -->
+
+    <div class="review-form">
+
+        <input
+            type="text"
+            id="reviewName"
+            placeholder="Votre nom"
+        >
+
+
+        <select id="reviewProduct">
+        </select>
+
+
+        <select id="reviewRating">
+
+            <option value="5">
+                ★★★★★
+            </option>
+
+            <option value="4">
+                ★★★★☆
+            </option>
+
+            <option value="3">
+                ★★★☆☆
+            </option>
+
+            <option value="2">
+                ★★☆☆☆
+            </option>
+
+            <option value="1">
+                ★☆☆☆☆
+            </option>
+
+        </select>
+
+
+        <textarea
+            id="reviewText"
+            placeholder="Écrivez votre commentaire..."
+        ></textarea>
+
+
+        <button onclick="addReview()">
+            Publier mon avis
+        </button>
+
+    </div>
+
+
+    <!-- LISTE DES COMMENTAIRES -->
+
+    <div
+        class="reviews-list"
+        id="reviewsList"
+    >
+    </div>
+
+</section>
+
+
+<!-- ================= RETOUR ================= -->
+
+<section class="back-section">
+
+    <a
+        href="blush.html"
+        class="back-btn"
+    >
+        ← Retour aux collections
+    </a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 Makeup WA&SA — La beauté commence avec toi ✨
+
+</footer>
+
+
+<script>
+
+
+/* =====================================================
+   BLUSH POUDRE
+===================================================== */
+
+const blushProducts = [
+
+    {
+        id:"blush-nude",
+        name:"Nude Velvet",
+        category:"Blush poudre",
+        description:"Une teinte nude douce pour un résultat naturel et élégant.",
+        price:135,
+        image:"blush nude.jpeg"
+    },
+
+
+    {
+        id:"blush-peach",
+        name:"Peach Glow",
+        category:"Blush poudre",
+        description:"Une teinte pêche lumineuse pour un effet bonne mine.",
+        price:135,
+        image:"blush powder peach.jpeg"
+    },
+
+
+    {
+        id:"blush-powder-rose",
+        name:"Rose Powder",
+        category:"Blush poudre",
+        description:"Une poudre rose élégante pour un résultat doux et lumineux.",
+        price:135,
+        image:"blush powder rose.jpeg"
+    }
+
+];
+
+
+/* =====================================================
+   BLUSH CRÈME
+===================================================== */
+
+const creamProducts = [
+
+    {
+        id:"cream-blush-mauve",
+        name:"Mauve Dream",
+        category:"Blush crème",
+        description:"Un mauve élégant pour une touche sophistiquée et moderne.",
+        price:155,
+        image:"cream blush move.jpeg"
+    },
+
+
+    {
+        id:"blush-cream-nude",
+        name:"Nude Cream",
+        category:"Blush crème",
+        description:"Un nude subtil pour un maquillage naturel et sophistiqué.",
+        price:145,
+        image:"blush cream nude.jpeg"
+    },
+
+
+    {
+        id:"blush-cream-rose",
+        name:"Rose Cream",
+        category:"Blush crème",
+        description:"Une teinte rose douce avec une texture fondante et confortable.",
+        price:149,
+        image:"blush cream rose.jpeg"
+    }
+
+];
+
+
+/* =====================================================
+   TYPE DE COLLECTION
+===================================================== */
+
+const params =
+    new URLSearchParams(
+        window.location.search
+    );
+
+const type =
+    params.get("type");
+
+
+const grid =
+    document.getElementById(
+        "productsGrid"
+    );
+
+
+const title =
+    document.getElementById(
+        "pageTitle"
+    );
+
+
+const description =
+    document.getElementById(
+        "pageDescription"
+    );
+
+
+let products;
+
+
+/* =====================================================
+   BLUSH POUDRE
+===================================================== */
+
+if(type === "blush"){
+
+    products = blushProducts;
+
+    title.textContent =
+        "Blush";
+
+    description.textContent =
+        "Découvrez nos différentes teintes de blush poudre.";
+
+}
+
+
+/* =====================================================
+   BLUSH CRÈME
+===================================================== */
+
+else if(type === "cream"){
+
+    products = creamProducts;
+
+    title.textContent =
+        "Blush Cream Color";
+
+    description.textContent =
+        "Découvrez nos différentes teintes de blush crème.";
+
+}
+
+
+/* =====================================================
+   PAR DÉFAUT
+===================================================== */
+
+else{
+
+    products = blushProducts;
+
+}
+
+
+/* =====================================================
+   AFFICHER LES PRODUITS
+===================================================== */
+
+products.forEach(function(product){
+
+    const card =
+        document.createElement("div");
+
+
+    card.className =
+        "product-card";
+
+
+    card.innerHTML = `
+
+        <div class="product-image">
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+            >
+
+        </div>
+
+
+        <div class="product-info">
+
+            <div class="category">
+                ${product.category}
+            </div>
+
+
+            <div class="product-name">
+                ${product.name}
+            </div>
+
+
+            <p class="description">
+                ${product.description}
+            </p>
+
+
+            <div class="price">
+                ${product.price} DH
+            </div>
+
+
+            <button
+                class="add-btn"
+                onclick="addToCart(
+                    '${product.id}',
+                    '${product.name}',
+                    ${product.price},
+                    '${product.image}'
+                )"
+            >
+                Ajouter au panier 🛍️
+            </button>
+
+
+            <div
+                class="message"
+                id="message-${product.id}"
+            >
+                ✓ Produit ajouté au panier
+            </div>
+
+        </div>
+
+    `;
+
+
+    grid.appendChild(card);
+
+});
+
+
+/* =====================================================
+   PANIER
+===================================================== */
+
+function addToCart(
+    id,
+    name,
+    price,
+    image
+){
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem(
+                "makeupCart"
+            )
+        ) || [];
+
+
+    const existing =
+        cart.find(
+            product =>
+            product.id === id
+        );
+
+
+    if(existing){
+
+        existing.quantity += 1;
+
+    }
+
+    else{
+
+        cart.push({
+
+            id:id,
+            name:name,
+            price:price,
+            image:image,
+            quantity:1
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "makeupCart",
+        JSON.stringify(cart)
+    );
+
+
+    const message =
+        document.getElementById(
+            "message-" + id
+        );
+
+
+    message.style.display =
+        "block";
+
+
+    setTimeout(function(){
+
+        message.style.display =
+            "none";
+
+    },2000);
+
+}
+
+
+/* =====================================================
+   SELECT DES COULEURS
+===================================================== */
+
+const reviewProduct =
+    document.getElementById(
+        "reviewProduct"
+    );
+
+
+products.forEach(function(product){
+
+    const option =
+        document.createElement(
+            "option"
+        );
+
+
+    option.value =
+        product.id;
+
+
+    option.textContent =
+        product.name;
+
+
+    reviewProduct.appendChild(
+        option
+    );
+
+});
+
+
+/* =====================================================
+   COMMENTAIRES PAR DÉFAUT
+===================================================== */
+
+const powderReviews = [
+
+    {
+        name:"Sara",
+        product:"blush-nude",
+        rating:5,
+        text:"Nude Velvet est très joli et donne un résultat naturel."
+    },
+
+
+    {
+        name:"Salma",
+        product:"blush-peach",
+        rating:5,
+        text:"Peach Glow donne un très joli effet bonne mine."
+    },
+
+
+    {
+        name:"Imane",
+        product:"blush-powder-rose",
+        rating:4,
+        text:"Rose Powder est élégant et facile à appliquer."
+    }
+
+];
+
+
+const creamReviews = [
+
+    {
+        name:"Aya",
+        product:"cream-blush-mauve",
+        rating:5,
+        text:"Mauve Dream est une très belle couleur, élégante et douce."
+    },
+
+
+    {
+        name:"Nora",
+        product:"blush-cream-nude",
+        rating:5,
+        text:"Nude Cream donne un résultat naturel et très joli."
+    },
+
+
+    {
+        name:"Lina",
+        product:"blush-cream-rose",
+        rating:5,
+        text:"Rose Cream est magnifique et facile à appliquer."
+    }
+
+];
+
+
+/* =====================================================
+   CHOISIR LES AVIS SELON LA COLLECTION
+===================================================== */
+
+let defaultReviews;
+
+
+if(type === "cream"){
+
+    defaultReviews =
+        creamReviews;
+
+}
+
+else{
+
+    defaultReviews =
+        powderReviews;
+
+}
+
+
+/* =====================================================
+   LOCAL STORAGE
+===================================================== */
+
+const reviewStorageKey =
+    "blushReviews_" +
+    (type || "blush");
+
+
+/* =====================================================
+   RÉCUPÉRER LES COMMENTAIRES
+===================================================== */
+
+function getReviews(){
+
+    let reviews =
+        JSON.parse(
+            localStorage.getItem(
+                reviewStorageKey
+            )
+        );
+
+
+    if(!reviews){
+
+        reviews =
+            defaultReviews;
+
+
+        localStorage.setItem(
+            reviewStorageKey,
+            JSON.stringify(
+                reviews
+            )
+        );
+
+    }
+
+
+    return reviews;
+
+}
+
+
+/* =====================================================
+   AFFICHER LES COMMENTAIRES
+===================================================== */
+
+function displayReviews(){
+
+    reviewsList.innerHTML =
+        "";
+
+
+    const reviews =
+        getReviews();
+
+
+    reviews.forEach(function(review){
+
+        const product =
+            products.find(function(product){
+
+                return product.id ===
+                       review.product;
+
+            });
+
+
+        if(!product){
+
+            return;
+
+        }
+
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "review-card";
+
+
+        const stars =
+            "★".repeat(
+                review.rating
+            ) +
+            "☆".repeat(
+                5 - review.rating
+            );
+
+
+        card.innerHTML = `
+
+            <div class="review-name">
+                ${review.name}
+            </div>
+
+
+            <div class="review-product">
+                ${product.name}
+            </div>
+
+
+            <div class="review-stars">
+                ${stars}
+            </div>
+
+
+            <div class="review-text">
+                ${review.text}
+            </div>
+
+        `;
+
+
+        reviewsList.appendChild(
+            card
+        );
+
+    });
+
+}
+
+
+/* =====================================================
+   AJOUTER UN COMMENTAIRE
+===================================================== */
+
+function addReview(){
+
+    const name =
+        document.getElementById(
+            "reviewName"
+        ).value.trim();
+
+
+    const product =
+        document.getElementById(
+            "reviewProduct"
+        ).value;
+
+
+    const rating =
+        Number(
+            document.getElementById(
+                "reviewRating"
+            ).value
+        );
+
+
+    const text =
+        document.getElementById(
+            "reviewText"
+        ).value.trim();
+
+
+    if(
+        name === "" ||
+        text === ""
+    ){
+
+        alert(
+            "Veuillez remplir votre nom et votre commentaire."
+        );
+
+        return;
+
+    }
+
+
+    const reviews =
+        getReviews();
+
+
+    reviews.push({
+
+        name:name,
+
+        product:product,
+
+        rating:rating,
+
+        text:text
+
+    });
+
+
+    localStorage.setItem(
+        reviewStorageKey,
+        JSON.stringify(
+            reviews
+        )
+    );
+
+
+    document.getElementById(
+        "reviewName"
+    ).value = "";
+
+
+    document.getElementById(
+        "reviewText"
+    ).value = "";
+
+
+    displayReviews();
+
+}
+
+
+/* =====================================================
+   CHARGER LES AVIS
+===================================================== */
+
+displayReviews();
+
+
+</script>
+
+
+</body>
+
+</html>

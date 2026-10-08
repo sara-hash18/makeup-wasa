@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rouges à lèvres | Makeup WA&SA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Georgia, "Times New Roman", serif;
+    background:#faf7f5;
+    color:#321b20;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    background:linear-gradient(135deg,#4d1724,#7d3041,#c47b89);
+    color:white;
+    text-align:center;
+    padding:55px 20px 45px;
+}
+
+header h1{
+    font-size:46px;
+    letter-spacing:2px;
+    margin-bottom:12px;
+}
+
+header p{
+    font-size:18px;
+    font-style:italic;
+}
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.96);
+    box-shadow:0 3px 15px rgba(0,0,0,0.10);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;
+
+    padding:17px 20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#4d1724;
+    font-weight:bold;
+    font-size:15px;
+    letter-spacing:1px;
+
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#c47b89;
+}
+
+/* ================= TITRE ================= */
+
+.intro{
+    text-align:center;
+    padding:60px 20px 30px;
+}
+
+.intro h2{
+    font-size:36px;
+    color:#5b1f2d;
+    margin-bottom:15px;
+}
+
+.intro p{
+    max-width:700px;
+    margin:auto;
+    font-size:17px;
+    line-height:1.8;
+    color:#68454c;
+}
+
+/* ================= CATEGORIES ================= */
+
+.categories{
+    width:90%;
+    max-width:1200px;
+    margin:35px auto 80px;
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+/* ================= CARD ================= */
+
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+
+    box-shadow:0 8px 25px rgba(70,20,30,0.12);
+
+    text-decoration:none;
+    color:#321b20;
+
+    transition:0.4s;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(70,20,30,0.20);
+}
+
+/* ================= IMAGE ================= */
+
+.card-image{
+    width:100%;
+    height:380px;
+    overflow:hidden;
+    background:#f5eeee;
+}
+
+.card-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:0.5s;
+}
+
+.card:hover .card-image img{
+    transform:scale(1.06);
+}
+
+/* ================= CARD CONTENT ================= */
+
+.card-content{
+    text-align:center;
+    padding:25px 20px 30px;
+}
+
+.card-content h3{
+    font-size:28px;
+    color:#5b1f2d;
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#7b5a61;
+    font-size:15px;
+    margin-bottom:20px;
+}
+
+/* ================= BUTTON ================= */
+
+.btn{
+    display:inline-block;
+
+    background:linear-gradient(135deg,#5b1f2d,#a34d61);
+
+    color:white;
+    padding:12px 30px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+    letter-spacing:0.5px;
+
+    transition:0.3s;
+}
+
+.card:hover .btn{
+    background:linear-gradient(135deg,#a34d61,#5b1f2d);
+    transform:scale(1.04);
+}
+
+/* ================= BEAUTY MESSAGE ================= */
+
+.beauty-message{
+    text-align:center;
+    margin:10px auto 70px;
+    padding:40px 20px;
+
+    width:90%;
+    max-width:900px;
+
+    background:linear-gradient(
+        135deg,
+        #fff0f3,
+        #f9e2e7
+    );
+
+    border-radius:20px;
+}
+
+.beauty-message h2{
+    color:#5b1f2d;
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.beauty-message p{
+    color:#68454c;
+    line-height:1.7;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#321b20;
+    color:white;
+    text-align:center;
+    padding:28px 20px;
+}
+
+footer p{
+    font-size:14px;
+    margin:5px 0;
+}
+
+footer a{
+    color:#f1b8c4;
+    text-decoration:none;
+}
+
+footer a:hover{
+    text-decoration:underline;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+    header{
+        padding:40px 15px 35px;
+    }
+
+    header h1{
+        font-size:34px;
+    }
+
+    header p{
+        font-size:16px;
+    }
+
+    nav{
+        gap:15px;
+        padding:14px 10px;
+    }
+
+    nav a{
+        font-size:13px;
+    }
+
+    .intro{
+        padding:45px 20px 20px;
+    }
+
+    .intro h2{
+        font-size:29px;
+    }
+
+    .intro p{
+        font-size:15px;
+    }
+
+    .categories{
+        width:92%;
+        grid-template-columns:1fr;
+        gap:25px;
+        margin-top:30px;
+    }
+
+    .card-image{
+        height:350px;
+    }
+
+    .card-content h3{
+        font-size:25px;
+    }
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:450px){
+
+    header h1{
+        font-size:29px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:11px;
+    }
+
+    .card-image{
+        height:300px;
+    }
+
+    .card-content{
+        padding:22px 15px 27px;
+    }
+
+    .card-content h3{
+        font-size:23px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <h1>💄 Makeup WA&SA</h1>
+
+    <p>
+        La beauté commence avec toi ✨
+    </p>
+
+</header>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <a href="makeuo.html">ACCUEIL</a>
+
+    <a href="produits.html">PRODUITS</a>
+
+    <a href="rouge.html">ROUGES À LÈVRES</a>
+
+    <a href="panier.html">
+        🛍 PANIER (<span id="cartCount">0</span>)
+    </a>
+
+</nav>
+
+
+<!-- ================= INTRO ================= -->
+
+<section class="intro">
+
+    <h2>Rouges à lèvres</h2>
+
+    <p>
+        Découvrez notre univers lèvres et choisissez
+        la texture qui correspond parfaitement à votre style.
+        Matte, glossy, hydratante ou classique,
+        trouvez votre signature beauté chez Makeup WA&SA.
+    </p>
+
+</section>
+
+
+<!-- ================= 4 CATEGORIES ================= -->
+
+<section class="categories">
+
+
+    <!-- LIPSTICK -->
+
+    <a href="rouge-details.html?category=lipstick" class="card">
+
+        <div class="card-image">
+
+            <img
+                src="Lipstick.jpeg"
+                alt="Lipstick"
+            >
+
+        </div>
+
+        <div class="card-content">
+
+            <h3>Lipstick</h3>
+
+            <p>
+                Découvrez notre sélection de rouges à lèvres
+                classiques et élégants.
+            </p>
+
+            <span class="btn">
+                Découvrir
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- LIPSTICK MATTE -->
+
+    <a href="rouge-details.html?category=matte" class="card">
+
+        <div class="card-image">
+
+            <img
+                src="Lipstickmatte.jpeg"
+                alt="Lipstick Matte"
+            >
+
+        </div>
+
+        <div class="card-content">
+
+            <h3>Lipstick Matte</h3>
+
+            <p>
+                Une finition mate sophistiquée
+                pour un look intense et élégant.
+            </p>
+
+            <span class="btn">
+                Découvrir
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- LIP GLOSS -->
+
+    <a href="rouge-details.html?category=gloss" class="card">
+
+        <div class="card-image">
+
+            <img
+                src="Gloss.jpeg"
+                alt="Lip Gloss"
+            >
+
+        </div>
+
+        <div class="card-content">
+
+            <h3>Lip Gloss</h3>
+
+            <p>
+                Apportez brillance et éclat
+                à vos lèvres avec notre collection Gloss.
+            </p>
+
+            <span class="btn">
+                Découvrir
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- LIP OIL -->
+
+    <a href="rouge-details.html?category=oil" class="card">
+
+        <div class="card-image">
+
+            <img
+                src="Lipoil.jpeg"
+                alt="Lip Oil"
+            >
+
+        </div>
+
+        <div class="card-content">
+
+            <h3>Lip Oil</h3>
+
+            <p>
+                Une touche de soin et de brillance
+                pour des lèvres douces et lumineuses.
+            </p>
+
+            <span class="btn">
+                Découvrir
+            </span>
+
+        </div>
+
+    </a>
+
+
+</section>
+
+
+<!-- ================= MESSAGE ================= -->
+
+<section class="beauty-message">
+
+    <h2>✨ La beauté commence avec toi</h2>
+
+    <p>
+        Explorez nos différentes collections lèvres
+        et trouvez la couleur et la texture qui vous ressemblent.
+    </p>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Makeup WA&SA — Tous droits réservés ✨
+    </p>
+
+    <p>
+        Contact :
+        <a href="mailto:contact@makeupwasa.com">
+            contact@makeupwasa.com
+        </a>
+    </p>
+
+</footer>
+
+
+<!-- ================= CART SCRIPT ================= -->
+
+<script>
+
+function updateCartCount(){
+
+    let cart = [];
+
+    try{
+
+        cart = JSON.parse(
+            localStorage.getItem("makeupCart")
+        ) || [];
+
+    }catch(error){
+
+        cart = [];
+
+    }
+
+    let total = 0;
+
+    cart.forEach(function(item){
+
+        total += Number(item.quantity) || 1;
+
+    });
+
+    const cartCount = document.getElementById("cartCount");
+
+    if(cartCount){
+
+        cartCount.textContent = total;
+
+    }
+
+}
+
+updateCartCount();
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Fond de teint | Makeup WA&SA</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia, "Times New Roman", serif;
+    background:#faf7f5;
+    color:#321b20;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background:linear-gradient(135deg,#4d1724,#7d3041,#c47b89);
+    color:white;
+    text-align:center;
+    padding:45px 20px;
+}
+
+header h1{
+    font-size:42px;
+    letter-spacing:2px;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:18px;
+    font-style:italic;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    box-shadow:0 3px 15px rgba(0,0,0,0.08);
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:8px;
+    padding:15px 10px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#5b1d2b;
+    font-weight:bold;
+    padding:10px 15px;
+    border-radius:25px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:#f2dce1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:45px auto;
+}
+
+.back{
+    display:inline-block;
+    margin-bottom:25px;
+    text-decoration:none;
+    color:#7d3041;
+    font-weight:bold;
+}
+
+.back:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.page-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.page-title h2{
+    font-size:35px;
+    color:#5b1d2b;
+    margin-bottom:10px;
+}
+
+.page-title p{
+    color:#76565e;
+    font-size:17px;
+}
+
+/* =========================
+   PRODUCT
+========================= */
+
+.product-detail{
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 10px 35px rgba(75,25,35,0.12);
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:start;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.image-section{
+    text-align:center;
+}
+
+.main-image-box{
+    width:100%;
+    max-width:520px;
+    height:520px;
+    margin:auto;
+    background:#fafafa;
+    border-radius:25px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.main-image-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    transition:0.35s;
+}
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-info{
+    padding:10px;
+}
+
+.brand{
+    color:#a15a69;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+.product-info h1{
+    font-size:34px;
+    color:#4d1724;
+    margin-bottom:12px;
+}
+
+.stars{
+    color:#c99a30;
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.price{
+    font-size:29px;
+    font-weight:bold;
+    color:#7d3041;
+    margin-bottom:20px;
+}
+
+.description{
+    color:#6c5056;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* =========================
+   SHADES
+========================= */
+
+.shades-title{
+    font-size:20px;
+    color:#4d1724;
+    margin-bottom:15px;
+}
+
+.selected-shade{
+    background:#f7e9ed;
+    padding:12px 15px;
+    border-radius:12px;
+    margin-bottom:18px;
+    color:#5b1d2b;
+    font-weight:bold;
+}
+
+.shades{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.shade{
+    border:2px solid #ead9dd;
+    background:white;
+    color:#4d1724;
+    min-width:75px;
+    padding:10px 13px;
+    border-radius:12px;
+    cursor:pointer;
+    font-family:Georgia, "Times New Roman", serif;
+    font-weight:bold;
+    transition:0.25s;
+}
+
+.shade:hover{
+    border-color:#9e5364;
+    transform:translateY(-2px);
+}
+
+.shade.active{
+    background:#7d3041;
+    border-color:#7d3041;
+    color:white;
+    box-shadow:0 5px 15px rgba(125,48,65,0.25);
+}
+
+/* =========================
+   QUANTITY
+========================= */
+
+.quantity-area{
+    margin-bottom:20px;
+}
+
+.quantity-area label{
+    display:block;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    width:max-content;
+    border:1px solid #ddc4ca;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.quantity button{
+    width:42px;
+    height:42px;
+    border:none;
+    background:#f4e3e7;
+    color:#5b1d2b;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.quantity span{
+    width:50px;
+    text-align:center;
+    font-weight:bold;
+}
+
+/* =========================
+   ADD CART
+========================= */
+
+.add-cart{
+    width:100%;
+    border:none;
+    padding:17px;
+    background:linear-gradient(135deg,#5b1d2b,#9e5364);
+    color:white;
+    border-radius:14px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.add-cart:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(91,29,43,0.25);
+}
+
+/* =========================
+   COMMENTS
+========================= */
+
+.reviews-section{
+    margin-top:50px;
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 10px 35px rgba(75,25,35,0.12);
+}
+
+.reviews-section h2{
+    text-align:center;
+    color:#5b1d2b;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.review-form{
+    display:grid;
+    gap:12px;
+    max-width:750px;
+    margin:auto;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddc4ca;
+    border-radius:12px;
+    font-family:Georgia, "Times New Roman", serif;
+    outline:none;
+}
+
+.review-form textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.review-form input:focus,
+.review-form select:focus,
+.review-form textarea:focus{
+    border-color:#9e5364;
+}
+
+.review-btn{
+    border:none;
+    padding:15px;
+    background:linear-gradient(135deg,#5b1d2b,#9e5364);
+    color:white;
+    border-radius:14px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.review-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(91,29,43,0.20);
+}
+
+.reviews-list{
+    max-width:750px;
+    margin:35px auto 0;
+}
+
+.review{
+    border-top:1px solid #ead9dd;
+    padding:20px 0;
+}
+
+.review:first-child{
+    border-top:none;
+}
+
+.review-name{
+    font-weight:bold;
+    color:#4d1724;
+    font-size:18px;
+}
+
+.review-product{
+    color:#a15a69;
+    font-size:14px;
+    margin-top:5px;
+}
+
+.review-stars{
+    color:#c99a30;
+    font-size:19px;
+    margin:7px 0;
+}
+
+.review-text{
+    color:#6c5056;
+    line-height:1.6;
+}
+
+/* =========================
+   NOT FOUND
+========================= */
+
+.not-found{
+    text-align:center;
+    background:white;
+    padding:50px 25px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.not-found h2{
+    color:#7d3041;
+    margin-bottom:15px;
+}
+
+.not-found a{
+    display:inline-block;
+    margin-top:20px;
+    background:#7d3041;
+    color:white;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    margin-top:60px;
+    background:#4d1724;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer p{
+    font-size:14px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    header{
+        padding:35px 15px;
+    }
+
+    header h1{
+        font-size:30px;
+    }
+
+    header p{
+        font-size:15px;
+    }
+
+    nav{
+        gap:3px;
+        padding:10px 5px;
+    }
+
+    nav a{
+        font-size:13px;
+        padding:8px 10px;
+    }
+
+    .container{
+        width:94%;
+        margin:30px auto;
+    }
+
+    .page-title h2{
+        font-size:28px;
+    }
+
+    .product-detail{
+        grid-template-columns:1fr;
+        padding:20px;
+        gap:25px;
+    }
+
+    .main-image-box{
+        height:380px;
+    }
+
+    .product-info h1{
+        font-size:27px;
+    }
+
+    .price{
+        font-size:25px;
+    }
+
+    .reviews-section{
+        padding:22px;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .main-image-box{
+        height:320px;
+    }
+
+    .product-detail{
+        padding:15px;
+        border-radius:18px;
+    }
+
+    .shade{
+        min-width:65px;
+        padding:9px 10px;
+        font-size:13px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <h1>💄 Makeup WA&SA</h1>
+
+    <p>
+        La beauté commence avec toi ✨
+    </p>
+
+</header>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="makeuo.html">
+        ACCUEIL
+    </a>
+
+    <a href="produits.html">
+        PRODUITS
+    </a>
+
+    <a href="rouge.html">
+        ROUGES À LÈVRES
+    </a>
+
+    <a href="fond.html">
+        FOND DE TEINT
+    </a>
+
+    <a href="palette.html">
+        PALETTES
+    </a>
+
+    <a href="panier.html">
+        🛍 PANIER
+        (<span id="cartCount">0</span>)
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     CONTENT
+========================= -->
+
+<main class="container">
+
+    <a
+        href="fond.html"
+        class="back"
+    >
+        ← Retour aux fonds de teint
+    </a>
+
+
+    <div class="page-title">
+
+        <h2>
+            Fond de teint
+        </h2>
+
+        <p>
+            Découvrez votre teinte idéale ✨
+        </p>
+
+    </div>
+
+
+    <div id="productContainer"></div>
+
+
+    <!-- =========================
+         COMMENTS
+    ========================= -->
+
+    <section class="reviews-section">
+
+        <h2>💬 Vos avis</h2>
+
+        <form
+            class="review-form"
+            onsubmit="addReview(event)"
+        >
+
+            <input
+                type="text"
+                id="reviewName"
+                placeholder="Votre prénom"
+                required
+            >
+
+
+            <select
+                id="reviewProduct"
+                required
+            >
+
+                <option value="">
+                    Choisissez un produit
+                </option>
+
+            </select>
+
+
+            <select
+                id="reviewRating"
+                required
+            >
+
+                <option value="">
+                    Votre note
+                </option>
+
+                <option value="5">
+                    ★★★★★ - Excellent
+                </option>
+
+                <option value="4">
+                    ★★★★☆ - Très bien
+                </option>
+
+                <option value="3">
+                    ★★★☆☆ - Bien
+                </option>
+
+                <option value="2">
+                    ★★☆☆☆ - Moyen
+                </option>
+
+                <option value="1">
+                    ★☆☆☆☆ - Pas satisfait
+                </option>
+
+            </select>
+
+
+            <textarea
+                id="reviewText"
+                placeholder="Écrivez votre commentaire..."
+                required
+            ></textarea>
+
+
+            <button
+                type="submit"
+                class="review-btn"
+            >
+                Publier mon avis 💕
+            </button>
+
+        </form>
+
+
+        <div
+            class="reviews-list"
+            id="reviewsList"
+        ></div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Makeup WA&SA — Tous droits réservés ✨
+    </p>
+
+</footer>
+
+
+<script>
+
+/* ==========================================
+   PANIER
+========================================== */
+
+function getCart(){
+
+    try{
+
+        return JSON.parse(
+            localStorage.getItem("makeupCart")
+        ) || [];
+
+    }
+
+    catch(error){
+
+        return [];
+
+    }
+
+}
+
+
+function updateCartCount(){
+
+    const cart = getCart();
+
+    let total = 0;
+
+    cart.forEach(function(item){
+
+        total += Number(item.quantity) || 0;
+
+    });
+
+    document.getElementById(
+        "cartCount"
+    ).textContent = total;
+
+}
+
+
+/* ==========================================
+   PRODUITS
+========================================== */
+
+const products = {
+
+    fenty: {
+
+        brand: "Fenty Beauty",
+
+        name: "Pro Filt'r Foundation",
+
+        price: 490,
+
+        mainImage: "Fenty Beauty.jpeg",
+
+        description:
+        "Un fond de teint Fenty Beauty au fini naturel et à la couvrance modulable. Choisissez votre teinte et ajoutez-la directement au panier.",
+
+        shades: [
+
+            {
+                name: "Teinte 1",
+                image: "Fenty Beauty1.jpeg"
+            },
+
+            {
+                name: "Teinte 2",
+                image: "fenty beauty2.jpeg"
+            },
+
+            {
+                name: "Teinte 3",
+                image: "Fenty beauty3.jpeg"
+            },
+
+            {
+                name: "Teinte 4",
+                image: "Fenty beauty4.jpeg"
+            }
+
+        ]
+
+    },
+
+
+    catrice: {
+
+        brand: "Catrice",
+
+        name: "HD Liquid Coverage Foundation",
+
+        price: 159,
+
+        mainImage: "MakeUp.jpeg",
+
+        description:
+        "HD Liquid Coverage Foundation de Catrice avec une couvrance élevée et un fini mat naturel. Découvrez les teintes disponibles.",
+
+        shades: [
+
+            {
+                name: "CATRICE",
+                image: "HD Liquid Coverage Foundation.jpeg"
+            },
+
+            {
+                name: "Catrice HD",
+                image: "MakeUp.jpeg"
+            }
+
+        ]
+
+    },
+
+
+    maybelline: {
+
+        brand: "Maybelline New York",
+
+        name: "Super Stay Foundation",
+
+        price: 189,
+
+        mainImage: "maybelline30H.jpeg",
+
+        description:
+        "Découvrez les différentes teintes disponibles de Maybelline Super Stay. Sélectionnez votre teinte pour afficher son image.",
+
+        shades: [
+
+            {
+                name: "368",
+                image: "Super Stay Lumi-Matte Foundation368.jpeg"
+            },
+
+            {
+                name: "350",
+                image: "Super Stay Lumi-Matte Foundation350.jpeg"
+            },
+
+            {
+                name: "90",
+                image: "90 Maybelline Super Stay30H.jpeg"
+            },
+
+            {
+                name: "340",
+                image: "Maybelline Super Stay 30H Foundation SPF 16.jpeg"
+            },
+
+            {
+                name: "310",
+                image: "Maybelline New York Super Stay Lumi Matte 310.jpeg"
+            },
+
+            {
+                name: "115",
+                image: "Maybelline Super Stay Lumi-Matte Foundation115.jpeg"
+            }
+
+        ]
+
+    }
+
+};
+
+
+/* ==========================================
+   URL
+========================================== */
+
+const params =
+new URLSearchParams(
+    window.location.search
+);
+
+const productId =
+params.get("product");
+
+
+/* ==========================================
+   SHADE
+========================================== */
+
+let selectedShade = null;
+
+
+/* ==========================================
+   QUANTITE
+========================================== */
+
+let quantity = 1;
+
+
+/* ==========================================
+   AFFICHER PRODUIT
+========================================== */
+
+function displayProduct(id){
+
+    const container =
+        document.getElementById(
+            "productContainer"
+        );
+
+    const product =
+        products[id];
+
+
+    if(!product){
+
+        container.innerHTML = `
+
+            <div class="not-found">
+
+                <h2>
+                    Produit introuvable
+                </h2>
+
+                <p>
+                    Le fond de teint demandé
+                    n'existe pas.
+                </p>
+
+                <a href="fond.html">
+                    ← Retour aux fonds de teint
+                </a>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    container.innerHTML = `
+
+        <section class="product-detail">
+
+            <div class="image-section">
+
+                <div class="main-image-box">
+
+                    <img
+                        id="mainProductImage"
+                        src="${product.mainImage}"
+                        alt="${product.name}"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <div class="brand">
+                    ${product.brand}
+                </div>
+
+
+                <h1>
+                    ${product.name}
+                </h1>
+
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+
+                <div class="price">
+                    ${product.price} DH
+                </div>
+
+
+                <p class="description">
+                    ${product.description}
+                </p>
+
+
+                <h3 class="shades-title">
+                    Choisissez votre teinte
+                </h3>
+
+
+                <div
+                    class="selected-shade"
+                    id="selectedShade"
+                >
+                    Sélectionnez une teinte
+                </div>
+
+
+                <div class="shades">
+
+                    ${product.shades.map(
+
+                        function(shade,index){
+
+                            return `
+
+                                <button
+                                    class="shade"
+                                    onclick="
+                                    selectShade(
+                                        '${id}',
+                                        ${index},
+                                        this
+                                    )
+                                    "
+                                >
+
+                                    ${shade.name}
+
+                                </button>
+
+                            `;
+
+                        }
+
+                    ).join("")}
+
+                </div>
+
+
+                <div class="quantity-area">
+
+                    <label>
+                        Quantité
+                    </label>
+
+
+                    <div class="quantity">
+
+                        <button
+                            onclick="
+                            changeQuantity(-1)
+                            "
+                        >
+                            −
+                        </button>
+
+
+                        <span id="quantity">
+                            1
+                        </span>
+
+
+                        <button
+                            onclick="
+                            changeQuantity(1)
+                            "
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="add-cart"
+                    onclick="
+                    addToCart('${id}')
+                    "
+                >
+
+                    🛍 Ajouter au panier
+
+                </button>
+
+            </div>
+
+        </section>
+
+    `;
+
+}
+
+
+/* ==========================================
+   CHANGER TEINTE
+========================================== */
+
+function selectShade(
+    productId,
+    index,
+    button
+){
+
+    const product =
+        products[productId];
+
+    if(!product){
+        return;
+    }
+
+
+    const shade =
+        product.shades[index];
+
+    if(!shade){
+        return;
+    }
+
+
+    selectedShade =
+        shade;
+
+
+    const image =
+        document.getElementById(
+            "mainProductImage"
+        );
+
+
+    const selected =
+        document.getElementById(
+            "selectedShade"
+        );
+
+
+    image.src =
+        shade.image;
+
+
+    selected.textContent =
+        "Teinte sélectionnée : " +
+        shade.name;
+
+
+    document
+        .querySelectorAll(".shade")
+        .forEach(function(btn){
+
+            btn.classList.remove(
+                "active"
+            );
+
+        });
+
+
+    button.classList.add(
+        "active"
+    );
+
+}
+
+
+/* ==========================================
+   QUANTITE
+========================================== */
+
+function changeQuantity(value){
+
+    quantity += value;
+
+
+    if(quantity < 1){
+        quantity = 1;
+    }
+
+
+    if(quantity > 20){
+        quantity = 20;
+    }
+
+
+    document.getElementById(
+        "quantity"
+    ).textContent = quantity;
+
+}
+
+
+/* ==========================================
+   AJOUT PANIER
+========================================== */
+
+function addToCart(productId){
+
+    const product =
+        products[productId];
+
+
+    if(!product){
+        return;
+    }
+
+
+    if(!selectedShade){
+
+        selectedShade =
+            product.shades[0];
+
+    }
+
+
+    let cart =
+        getCart();
+
+
+    const productName =
+        product.name +
+        " — Teinte " +
+        selectedShade.name;
+
+
+    const existing =
+        cart.find(function(item){
+
+            return item.name === productName;
+
+        });
+
+
+    if(existing){
+
+        existing.quantity += quantity;
+
+    }
+
+    else{
+
+        cart.push({
+
+            name: productName,
+
+            price: product.price,
+
+            image: selectedShade.image,
+
+            brand: product.brand,
+
+            quantity: quantity
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "makeupCart",
+        JSON.stringify(cart)
+    );
+
+
+    updateCartCount();
+
+
+    alert(
+        "✨ Produit ajouté au panier !\n\n" +
+        product.name +
+        "\nTeinte : " +
+        selectedShade.name
+    );
+
+
+    quantity = 1;
+
+
+    document.getElementById(
+        "quantity"
+    ).textContent = "1";
+
+}
+
+
+/* ==========================================
+   COMMENTAIRES
+========================================== */
+
+const defaultReviews = {
+
+    fenty: [
+
+        {
+            name: "Sara",
+            product: "Fenty Beauty - Teinte 1",
+            rating: 5,
+            text: "Très belle couvrance et la teinte est magnifique."
+        },
+
+        {
+            name: "Salma",
+            product: "Fenty Beauty - Teinte 2",
+            rating: 5,
+            text: "J'aime beaucoup le résultat."
+        },
+
+        {
+            name: "Imane",
+            product: "Fenty Beauty - Teinte 3",
+            rating: 4,
+            text: "Très joli fond de teint."
+        }
+
+    ],
+
+
+    catrice: [
+
+        {
+            name: "Aya",
+            product: "Catrice - CATRICE",
+            rating: 5,
+            text: "Très bon rapport qualité-prix."
+        },
+
+        {
+            name: "Nora",
+            product: "Catrice - Catrice HD",
+            rating: 5,
+            text: "Le rendu est très joli."
+        }
+
+    ],
+
+
+    maybelline: [
+
+        {
+            name: "Lina",
+            product: "Maybelline - 368",
+            rating: 5,
+            text: "Très belle teinte."
+        },
+
+        {
+            name: "Meriem",
+            product: "Maybelline - 350",
+            rating: 5,
+            text: "J'adore le rendu."
+        },
+
+        {
+            name: "Aya",
+            product: "Maybelline - 310",
+            rating: 4,
+            text: "Très joli et facile à utiliser."
+        }
+
+    ]
+
+};
+
+
+/* ==========================================
+   CLE COMMENTAIRES
+========================================== */
+
+function getReviewKey(){
+
+    return "fondReviews_" + productId;
+
+}
+
+
+/* ==========================================
+   RECUPERER COMMENTAIRES
+========================================== */
+
+function getReviews(){
+
+    const saved =
+        localStorage.getItem(
+            getReviewKey()
+        );
+
+
+    if(saved){
+
+        return JSON.parse(saved);
+
+    }
+
+
+    return defaultReviews[productId] || [];
+
+}
+
+
+/* ==========================================
+   ETOILES
+========================================== */
+
+function getStars(rating){
+
+    let stars = "";
+
+
+    for(let i = 1; i <= 5; i++){
+
+        if(i <= rating){
+
+            stars += "★";
+
+        }
+
+        else{
+
+            stars += "☆";
+
+        }
+
+    }
+
+
+    return stars;
+
+}
+
+
+/* ==========================================
+   SECURITE
+========================================== */
+
+function escapeHTML(text){
+
+    const div =
+        document.createElement("div");
+
+    div.textContent = text;
+
+    return div.innerHTML;
+
+}
+
+
+/* ==========================================
+   PRODUITS COMMENTAIRES
+========================================== */
+
+function fillReviewProducts(){
+
+    const select =
+        document.getElementById(
+            "reviewProduct"
+        );
+
+
+    if(
+        !select ||
+        !products[productId]
+    ){
+
+        return;
+
+    }
+
+
+    select.innerHTML = `
+
+        <option value="">
+            Choisissez un produit
+        </option>
+
+    `;
+
+
+    products[productId].shades.forEach(
+
+        function(shade){
+
+            const option =
+                document.createElement(
+                    "option"
+                );
+
+
+            option.value =
+                products[productId].brand +
+                " - " +
+                shade.name;
+
+
+            option.textContent =
+                products[productId].brand +
+                " - " +
+                shade.name;
+
+
+            select.appendChild(
+                option
+            );
+
+        }
+
+    );
+
+}
+
+
+/* ==========================================
+   AFFICHER COMMENTAIRES
+========================================== */
+
+function displayReviews(){
+
+    const list =
+        document.getElementById(
+            "reviewsList"
+        );
+
+
+    if(!list){
+        return;
+    }
+
+
+    const reviews =
+        getReviews();
+
+
+    list.innerHTML = "";
+
+
+    if(reviews.length === 0){
+
+        list.innerHTML =
+            "<p>Aucun commentaire pour le moment.</p>";
+
+        return;
+
+    }
+
+
+    reviews.forEach(
+
+        function(review){
+
+            const div =
+                document.createElement(
+                    "div"
+                );
+
+
+            div.className =
+                "review";
+
+
+            div.innerHTML = `
+
+                <div class="review-name">
+
+                    ${escapeHTML(
+                        review.name
+                    )}
+
+                </div>
+
+
+                <div class="review-product">
+
+                    ${escapeHTML(
+                        review.product
+                    )}
+
+                </div>
+
+
+                <div class="review-stars">
+
+                    ${getStars(
+                        review.rating
+                    )}
+
+                </div>
+
+
+                <div class="review-text">
+
+                    ${escapeHTML(
+                        review.text
+                    )}
+
+                </div>
+
+            `;
+
+
+            list.appendChild(div);
+
+        }
+
+    );
+
+}
+
+
+/* ==========================================
+   AJOUTER COMMENTAIRE
+========================================== */
+
+function addReview(event){
+
+    event.preventDefault();
+
+
+    const name =
+        document.getElementById(
+            "reviewName"
+        ).value.trim();
+
+
+    const product =
+        document.getElementById(
+            "reviewProduct"
+        ).value;
+
+
+    const rating =
+        Number(
+            document.getElementById(
+                "reviewRating"
+            ).value
+        );
+
+
+    const text =
+        document.getElementById(
+            "reviewText"
+        ).value.trim();
+
+
+    if(
+        !name ||
+        !product ||
+        !rating ||
+        !text
+    ){
+
+        alert(
+            "Veuillez remplir tous les champs."
+        );
+
+        return;
+
+    }
+
+
+    const reviews =
+        getReviews();
+
+
+    reviews.unshift({
+
+        name: name,
+
+        product: product,
+
+        rating: rating,
+
+        text: text
+
+    });
+
+
+    localStorage.setItem(
+
+        getReviewKey(),
+
+        JSON.stringify(reviews)
+
+    );
+
+
+    document.getElementById(
+        "reviewName"
+    ).value = "";
+
+
+    document.getElementById(
+        "reviewProduct"
+    ).value = "";
+
+
+    document.getElementById(
+        "reviewRating"
+    ).value = "";
+
+
+    document.getElementById(
+        "reviewText"
+    ).value = "";
+
+
+    displayReviews();
+
+
+    alert(
+        "💕 Votre commentaire a été publié !"
+    );
+
+}
+
+
+/* ==========================================
+   DEMARRAGE
+========================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        updateCartCount();
+
+
+        displayProduct(
+            productId || "fenty"
+        );
+
+
+        fillReviewProducts();
+
+
+        displayReviews();
+
+    }
+);
+
+</script>
+
+</body>
+
+</html>

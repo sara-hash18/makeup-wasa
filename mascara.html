@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mascara | Makeup WA&SA</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #faf7f5;
+            color: #2d2023;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background:
+                linear-gradient(rgba(40,20,25,.55), rgba(40,20,25,.55)),
+                url("image1.jpeg") center/cover;
+
+            min-height: 420px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 30px 20px;
+        }
+
+        header .small-title {
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        header h1 {
+            font-family: Georgia, serif;
+            font-size: 55px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 17px;
+            letter-spacing: 1px;
+        }
+
+        /* ================= NAV ================= */
+
+        nav {
+            background: rgba(255,255,255,.96);
+            padding: 18px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 3px 20px rgba(0,0,0,.08);
+        }
+
+        nav a {
+            color: #4b3439;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #a35b72;
+        }
+
+        /* ================= PANIER ================= */
+
+        .cart-bar {
+            text-align: right;
+            width: 92%;
+            max-width: 1100px;
+            margin: 25px auto 0;
+        }
+
+        .cart-btn {
+            display: inline-block;
+            background: #3a1721;
+            color: white;
+            text-decoration: none;
+            padding: 12px 22px;
+            border-radius: 25px;
+            font-size: 13px;
+            transition: .3s;
+        }
+
+        .cart-btn:hover {
+            background: #a35b72;
+        }
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+            padding: 60px 20px 45px;
+        }
+
+        .intro span {
+            color: #a35b72;
+            font-size: 12px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .intro h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin: 12px 0 18px;
+            color: #332326;
+        }
+
+        .intro p {
+            color: #76666a;
+            font-size: 16px;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            width: 92%;
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding-bottom: 70px;
+        }
+
+        /* ================= CARD ================= */
+
+        .product-card {
+            background: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0,0,0,.08);
+            transition: .4s;
+            display: block;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(0,0,0,.14);
+        }
+
+        /* ================= IMAGE ================= */
+
+        .product-image {
+            height: 330px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: .5s;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.06);
+        }
+
+        /* ================= CONTENT ================= */
+
+        .product-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .category {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #a35b72;
+        }
+
+        .product-content h3 {
+            font-family: Georgia, serif;
+            font-size: 28px;
+            margin: 8px 0 10px;
+            color: #302124;
+        }
+
+        .product-content p {
+            color: #77686c;
+            font-size: 14px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .price {
+            font-size: 17px;
+            font-weight: bold;
+            color: #3a1721;
+            margin-bottom: 18px;
+        }
+
+        /* ================= ADD BUTTON ================= */
+
+        .add-cart {
+            border: 1px solid #a35b72;
+            background: white;
+            color: #a35b72;
+            padding: 12px 24px;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: .3s;
+            border-radius: 2px;
+        }
+
+        .add-cart:hover {
+            background: #a35b72;
+            color: white;
+        }
+
+        /* ================= MESSAGE ================= */
+
+        .message {
+            display: none;
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            background: #3a1721;
+            color: white;
+            padding: 16px 22px;
+            border-radius: 8px;
+            font-size: 14px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.2);
+            z-index: 9999;
+        }
+
+        /* ================= BEAUTY MESSAGE ================= */
+
+        .beauty-message {
+            width: 92%;
+            max-width: 1100px;
+            margin: 10px auto 70px;
+            background: #eee1e3;
+            text-align: center;
+            padding: 50px 25px;
+        }
+
+        .beauty-message span {
+            color: #a35b72;
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+
+        .beauty-message h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin: 12px 0;
+        }
+
+        .beauty-message p {
+            color: #66575b;
+        }
+
+        /* ================= AVIS CLIENTS ================= */
+
+        .reviews {
+            width: 92%;
+            max-width: 1100px;
+            margin: 20px auto 80px;
+        }
+
+        .reviews-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .reviews-title span {
+            color: #a35b72;
+            font-size: 12px;
+            letter-spacing: 4px;
+        }
+
+        .reviews-title h2 {
+            font-family: Georgia, serif;
+            font-size: 36px;
+            color: #332326;
+            margin: 12px 0;
+        }
+
+        .reviews-title p {
+            color: #76666a;
+        }
+
+        .review-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 45px;
+        }
+
+        .review-card {
+            background: white;
+            padding: 25px;
+            border-radius: 6px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.07);
+        }
+
+        .review-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .review-top strong {
+            color: #3a1721;
+            font-family: Georgia, serif;
+            font-size: 18px;
+        }
+
+        .stars {
+            color: #c47b89;
+            letter-spacing: 2px;
+        }
+
+        .review-card p {
+            color: #66575b;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .review-card small {
+            color: #a35b72;
+            font-size: 12px;
+        }
+
+        /* ================= FORMULAIRE AVIS ================= */
+
+        .review-form {
+            max-width: 650px;
+            margin: auto;
+            background: #eee1e3;
+            padding: 35px;
+            border-radius: 5px;
+        }
+
+        .review-form h3 {
+            font-family: Georgia, serif;
+            color: #3a1721;
+            font-size: 27px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .review-form input,
+        .review-form select,
+        .review-form textarea {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 15px;
+            border: 1px solid #d8c2c7;
+            background: white;
+            font-family: Arial, sans-serif;
+            outline: none;
+        }
+
+        .review-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .rating {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .rating label {
+            color: #4b3439;
+            font-size: 14px;
+        }
+
+        .review-form button {
+            display: block;
+            margin: 5px auto 0;
+            background: #3a1721;
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            cursor: pointer;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        .review-form button:hover {
+            background: #a35b72;
+        }
+
+        /* ================= BACK ================= */
+
+        .back-section {
+            text-align: center;
+            padding: 0 20px 70px;
+        }
+
+        .back-btn {
+            color: #6d414b;
+            text-decoration: none;
+            font-size: 14px;
+            border-bottom: 1px solid #c8a5aa;
+            padding-bottom: 5px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: #2d2023;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .contact h2 {
+            font-family: Georgia, serif;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .contact p {
+            color: #ddd0d3;
+            margin: 7px;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #211719;
+            color: #cdbdc1;
+            text-align: center;
+            padding: 25px 15px;
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 700px) {
+
+            header {
+                min-height: 350px;
+            }
+
+            header h1 {
+                font-size: 38px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 11px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+
+            .intro h2 {
+                font-size: 30px;
+            }
+
+            .cart-bar {
+                text-align: center;
+            }
+
+            .review-list {
+                grid-template-columns: 1fr;
+            }
+
+            .reviews-title h2 {
+                font-size: 30px;
+            }
+
+            .review-form {
+                padding: 25px;
+            }
+
+            .rating {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="small-title">
+            Makeup WA&SA
+        </div>
+
+        <h1>
+            Mascara
+        </h1>
+
+        <p>
+            Volume, longueur et intensité pour vos cils
+        </p>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="makeuo.html">
+            Accueil
+        </a>
+
+        <a href="produits.html">
+            Produits
+        </a>
+
+        <a href="panier.html">
+            🛒 Panier
+        </a>
+
+        <a href="makeuo.html#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <!-- ================= CART ================= -->
+
+    <div class="cart-bar">
+
+        <a href="panier.html" class="cart-btn">
+            🛒 Voir mon panier
+            (<span id="cart-count">0</span>)
+        </a>
+
+    </div>
+
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="intro">
+
+        <span>
+            EYES
+        </span>
+
+        <h2>
+            Notre collection Mascara
+        </h2>
+
+        <p>
+            Découvrez notre sélection de mascaras pour
+            donner volume, longueur et intensité à vos cils.
+        </p>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="products">
+
+
+        <!-- ================= MASCARA 1 ================= -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="mascara move.jpeg"
+                    alt="Mascara Move"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Mascara
+                </span>
+
+                <h3>
+                    Mascara Move
+                </h3>
+
+                <p>
+                    Un mascara élégant pour des cils
+                    définis et intensifiés.
+                </p>
+
+                <div class="price">
+                    129 DH
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Mascara Move',
+                        129,
+                        'mascara move.jpeg'
+                    )"
+                >
+                    Ajouter au panier 🛒
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= MASCARA 2 ================= -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="mascara dahbiya.jpeg"
+                    alt="Mascara Dahbiya"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Mascara
+                </span>
+
+                <h3>
+                    Mascara Dahbiya
+                </h3>
+
+                <p>
+                    Une formule parfaite pour apporter
+                    longueur et volume aux cils.
+                </p>
+
+                <div class="price">
+                    139 DH
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Mascara Dahbiya',
+                        139,
+                        'mascara dahbiya.jpeg'
+                    )"
+                >
+                    Ajouter au panier 🛒
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= MASCARA 3 ================= -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="mascara vert.jpeg"
+                    alt="Mascara Vert"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Mascara
+                </span>
+
+                <h3>
+                    Mascara Vert
+                </h3>
+
+                <p>
+                    Une touche de couleur originale
+                    pour un regard unique.
+                </p>
+
+                <div class="price">
+                    135 DH
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Mascara Vert',
+                        135,
+                        'mascara vert.jpeg'
+                    )"
+                >
+                    Ajouter au panier 🛒
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= MASCARA 4 ================= -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                    src="mascara mooove.jpeg"
+                    alt="Mascara Moove"
+                >
+
+            </div>
+
+            <div class="product-content">
+
+                <span class="category">
+                    Mascara
+                </span>
+
+                <h3>
+                    Mascara Moove
+                </h3>
+
+                <p>
+                    Un mascara intense pour un regard
+                    plus profond et sophistiqué.
+                </p>
+
+                <div class="price">
+                    149 DH
+                </div>
+
+                <button
+                    class="add-cart"
+                    onclick="addToCart(
+                        'Mascara Moove',
+                        149,
+                        'mascara mooove.jpeg'
+                    )"
+                >
+                    Ajouter au panier 🛒
+                </button>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- ================= BEAUTY MESSAGE ================= -->
+
+    <section class="beauty-message">
+
+        <span>
+            YOUR BEAUTY · YOUR STYLE
+        </span>
+
+        <h2>
+            Un regard qui te ressemble ✨
+        </h2>
+
+        <p>
+            Choisissez le mascara qui correspond
+            à votre style et à votre look.
+        </p>
+
+    </section>
+
+
+    <!-- ================= AVIS CLIENTS ================= -->
+
+    <section class="reviews">
+
+        <div class="reviews-title">
+
+            <span>
+                VOS AVIS
+            </span>
+
+            <h2>
+                Les avis de nos clientes
+            </h2>
+
+            <p>
+                Découvrez les expériences de nos clientes avec nos mascaras.
+            </p>
+
+        </div>
+
+
+        <div class="review-list" id="reviewList">
+
+            <div class="review-card">
+
+                <div class="review-top">
+
+                    <strong>
+                        Sara
+                    </strong>
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                </div>
+
+                <p>
+                    J'adore ce mascara ! Il donne beaucoup de volume
+                    et le résultat est très joli. ✨
+                </p>
+
+                <small>
+                    Mascara Move
+                </small>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-top">
+
+                    <strong>
+                        Imane
+                    </strong>
+
+                    <span class="stars">
+                        ★★★★★
+                    </span>
+
+                </div>
+
+                <p>
+                    Très bon mascara, facile à appliquer et mes cils
+                    paraissent plus longs. 💕
+                </p>
+
+                <small>
+                    Mascara Dahbiya
+                </small>
+
+            </div>
+
+
+            <div class="review-card">
+
+                <div class="review-top">
+
+                    <strong>
+                        Salma
+                    </strong>
+
+                    <span class="stars">
+                        ★★★★☆
+                    </span>
+
+                </div>
+
+                <p>
+                    J'aime beaucoup la couleur et le rendu.
+                    Très original pour changer du mascara classique. 🌸
+                </p>
+
+                <small>
+                    Mascara Vert
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= AJOUTER UN AVIS ================= -->
+
+        <div class="review-form">
+
+            <h3>
+                Donnez votre avis
+            </h3>
+
+            <input
+                type="text"
+                id="reviewName"
+                placeholder="Votre prénom"
+            >
+
+            <select id="reviewProduct">
+
+                <option value="Mascara Move">
+                    Mascara Move
+                </option>
+
+                <option value="Mascara Dahbiya">
+                    Mascara Dahbiya
+                </option>
+
+                <option value="Mascara Vert">
+                    Mascara Vert
+                </option>
+
+                <option value="Mascara Moove">
+                    Mascara Moove
+                </option>
+
+            </select>
+
+
+            <div class="rating">
+
+                <label>
+                    Votre note :
+                </label>
+
+                <select id="reviewRating">
+
+                    <option value="5">★★★★★</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="1">★☆☆☆☆</option>
+
+                </select>
+
+            </div>
+
+
+            <textarea
+                id="reviewComment"
+                placeholder="Écrivez votre avis..."
+            ></textarea>
+
+
+            <button onclick="addReview()">
+                Publier mon avis
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= BACK ================= -->
+
+    <section class="back-section">
+
+        <a
+            href="produits.html"
+            class="back-btn"
+        >
+            ← Retour aux produits
+        </a>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <h2>
+            Contact
+        </h2>
+
+        <p>
+            Une question sur nos produits ?
+        </p>
+
+        <p>
+            📧 contact@makeupwasa.com
+        </p>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Makeup WA&SA
+        </p>
+
+        <p>
+            Tous droits réservés ♡
+        </p>
+
+    </footer>
+
+
+    <!-- ================= MESSAGE ================= -->
+
+    <div
+        class="message"
+        id="message"
+    >
+        ✨ Produit ajouté au panier !
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        /* ================= CART ================= */
+
+        let cart =
+            JSON.parse(
+                localStorage.getItem("makeupCart")
+            ) || [];
+
+
+        /* ================= UPDATE COUNT ================= */
+
+        updateCartCount();
+
+
+        function updateCartCount() {
+
+            let count = 0;
+
+            cart.forEach(function(product) {
+
+                count += product.quantity;
+
+            });
+
+            document.getElementById("cart-count").textContent = count;
+
+        }
+
+
+        /* ================= ADD TO CART ================= */
+
+        function addToCart(name, price, image) {
+
+            let productId =
+                "mascara-" +
+                name.toLowerCase().replaceAll(" ", "-");
+
+
+            let existingProduct =
+                cart.find(
+                    product => product.id === productId
+                );
+
+
+            if (existingProduct) {
+
+                existingProduct.quantity += 1;
+
+            } else {
+
+                cart.push({
+
+                    id: productId,
+
+                    name: name,
+
+                    price: price,
+
+                    image: image,
+
+                    quantity: 1
+
+                });
+
+            }
+
+
+            localStorage.setItem(
+                "makeupCart",
+                JSON.stringify(cart)
+            );
+
+
+            updateCartCount();
+
+
+            let message =
+                document.getElementById("message");
+
+            message.style.display = "block";
+
+
+            setTimeout(function() {
+
+                message.style.display = "none";
+
+            }, 2500);
+
+        }
+
+
+        /* ================= AVIS CLIENTS ================= */
+
+        const defaultReviews = [
+
+            {
+                name: "Sara",
+                product: "Mascara Move",
+                rating: 5,
+                comment:
+                    "J'adore ce mascara ! Il donne beaucoup de volume et le résultat est très joli. ✨"
+            },
+
+            {
+                name: "Imane",
+                product: "Mascara Dahbiya",
+                rating: 5,
+                comment:
+                    "Très bon mascara, facile à appliquer et mes cils paraissent plus longs. 💕"
+            },
+
+            {
+                name: "Salma",
+                product: "Mascara Vert",
+                rating: 4,
+                comment:
+                    "J'aime beaucoup la couleur et le rendu. Très original pour changer du mascara classique. 🌸"
+            }
+
+        ];
+
+
+        let savedReviews =
+            localStorage.getItem("mascaraReviews");
+
+
+        let mascaraReviews;
+
+
+        if (!savedReviews) {
+
+            mascaraReviews = defaultReviews;
+
+            localStorage.setItem(
+                "mascaraReviews",
+                JSON.stringify(mascaraReviews)
+            );
+
+        } else {
+
+            mascaraReviews =
+                JSON.parse(savedReviews);
+
+            if (!Array.isArray(mascaraReviews)) {
+
+                mascaraReviews = defaultReviews;
+
+                localStorage.setItem(
+                    "mascaraReviews",
+                    JSON.stringify(mascaraReviews)
+                );
+
+            }
+
+        }
+
+
+        /* ================= AFFICHER LES AVIS ================= */
+
+        function displayReviews() {
+
+            let reviewList =
+                document.getElementById("reviewList");
+
+            let html = "";
+
+
+            mascaraReviews.forEach(function(review) {
+
+                let rating =
+                    Number(review.rating);
+
+                let stars =
+                    "★".repeat(rating) +
+                    "☆".repeat(5 - rating);
+
+
+                html += `
+
+                    <div class="review-card">
+
+                        <div class="review-top">
+
+                            <strong>
+                                ${escapeHTML(review.name)}
+                            </strong>
+
+                            <span class="stars">
+                                ${stars}
+                            </span>
+
+                        </div>
+
+                        <p>
+                            ${escapeHTML(review.comment)}
+                        </p>
+
+                        <small>
+                            ${escapeHTML(review.product)}
+                        </small>
+
+                    </div>
+
+                `;
+
+            });
+
+
+            reviewList.innerHTML = html;
+
+        }
+
+
+        /* ================= AJOUTER UN AVIS ================= */
+
+        function addReview() {
+
+            let name =
+                document
+                .getElementById("reviewName")
+                .value
+                .trim();
+
+
+            let product =
+                document
+                .getElementById("reviewProduct")
+                .value;
+
+
+            let rating =
+                Number(
+                    document
+                    .getElementById("reviewRating")
+                    .value
+                );
+
+
+            let comment =
+                document
+                .getElementById("reviewComment")
+                .value
+                .trim();
+
+
+            if (!name || !comment) {
+
+                alert(
+                    "Veuillez remplir votre prénom et votre avis."
+                );
+
+                return;
+
+            }
+
+
+            mascaraReviews.push({
+
+                name: name,
+
+                product: product,
+
+                rating: rating,
+
+                comment: comment
+
+            });
+
+
+            localStorage.setItem(
+                "mascaraReviews",
+                JSON.stringify(mascaraReviews)
+            );
+
+
+            displayReviews();
+
+
+            document.getElementById("reviewName").value = "";
+
+            document.getElementById("reviewComment").value = "";
+
+
+            alert("Merci pour votre avis ! ♡");
+
+        }
+
+
+        /* ================= PROTECTION DU TEXTE ================= */
+
+        function escapeHTML(text) {
+
+            return String(text)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+
+        }
+
+
+        /* ================= AFFICHAGE INITIAL ================= */
+
+        displayReviews();
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Makeup WA&SA</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fff5f8;
+            color: #4a3038;
+            line-height: 1.6;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: linear-gradient(135deg, #d98fa5, #f3b6c7);
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        header h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 17px;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            background-color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #b85c78;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #a94e6c;
+        }
+
+
+        /* ================= CONTENU ================= */
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+        }
+
+
+        /* ================= INTRO ================= */
+
+        .intro {
+            text-align: center;
+            padding: 40px 10px 25px;
+        }
+
+        .intro h2 {
+            color: #b85c78;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+
+        /* ================= IMAGE PRINCIPALE ================= */
+
+        .hero-image {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: 20px auto;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+
+        /* ================= CONSEILS ================= */
+
+        .conseils {
+            background-color: #f9dce5;
+            padding: 30px 25px;
+            border-radius: 20px;
+            margin: 35px 0;
+        }
+
+        .conseils h2 {
+            color: #a94e6c;
+            margin-bottom: 15px;
+        }
+
+        .conseils li {
+            margin: 8px 0;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background-color: white;
+            text-align: center;
+            padding: 35px 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.07);
+        }
+
+        .contact h2 {
+            color: #b85c78;
+            margin-bottom: 10px;
+        }
+
+
+        /* ================= BOUTON ================= */
+
+        .button {
+            display: inline-block;
+            background-color: #c86f8b;
+            color: white;
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 30px;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #a94e6c;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #c86f8b;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 30px;
+        }
+
+
+        /* ================= TELEPHONE ================= */
+
+        @media (max-width: 600px) {
+
+            header h1 {
+                font-size: 30px;
+            }
+
+            header {
+                padding: 35px 15px;
+            }
+
+            nav a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+
+            .intro h2 {
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <h1>
+            💄 Makeup WA&SA
+        </h1>
+
+        <p>
+            La beauté commence avec toi ✨
+        </p>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="makeuo.html">
+            Accueil
+        </a>
+
+        <a href="produits.html">
+            Produits
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <!-- ================= CONTENU ================= -->
+
+    <main class="container">
+
+
+        <!-- INTRO -->
+
+        <section class="intro">
+
+            <h2>
+                Bienvenue dans notre univers beauté
+            </h2>
+
+            <p>
+                Découvrez notre sélection de produits de maquillage
+                pour créer votre propre style.
+            </p>
+
+        </section>
+
+
+        <!-- IMAGE PRINCIPALE -->
+
+        <img
+            src="image2.jpeg"
+            alt="Produits de maquillage"
+            class="hero-image"
+        >
+
+
+        <!-- CONSEILS -->
+
+        <section class="conseils">
+
+            <h2>
+                🌷 Nos conseils beauté
+            </h2>
+
+            <ul>
+
+                <li>
+                    Choisir le maquillage adapté à votre peau.
+                </li>
+
+                <li>
+                    Utiliser des produits de qualité.
+                </li>
+
+                <li>
+                    Nettoyer la peau avant le maquillage.
+                </li>
+
+                <li>
+                    Bien démaquiller la peau le soir.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- CONTACT -->
+
+        <section class="contact" id="contact">
+
+            <h2>
+                💌 Contact
+            </h2>
+
+            <p>
+                Pour plus d'informations, contactez-nous.
+            </p>
+
+            <p>
+                📧 charifsara70@gmail.com
+            </p>
+
+        </section>
+
+
+        <!-- BOUTON PRODUITS -->
+
+        <div style="text-align:center; margin-bottom:40px;">
+
+            <a href="produits.html" class="button">
+                Découvrir nos produits ✨
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Makeup WA&SA
+        </p>
+
+        <p>
+            Tous droits réservés 💕
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
